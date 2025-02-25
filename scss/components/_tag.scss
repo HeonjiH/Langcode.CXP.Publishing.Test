@@ -1,0 +1,70 @@
+.tags {
+    margin-top: 0.5rem;
+    gap: 3px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 0 0.5rem;
+}
+
+.tag-sm {
+    height: 1.125rem;
+    font-size: 0.75rem;
+
+    i {
+        font-size: 0.5rem;
+    }
+}
+
+.tag-md {
+    height: 1.5rem;
+    font-size: 0.75rem;
+
+    i {
+        font-size: 0.75rem;
+    }
+}
+
+.tag-lg {
+    height: 1.875rem;
+    font-size: 1rem;
+
+    i {
+        font-size: 0.875rem;
+    }
+}
+
+.tag-default {
+    background-color: var(--lang-ui-01);
+    color: var(--lang-text-01);
+}
+
+.tag-default-02 {
+    background-color: var(--lang-ui-04);
+    color: var(--lang-text-01);
+}
+
+.tag-primary {
+    background-color: var(--lang-primary);
+}
+
+.tag-transparent {
+    background-color: transparent;
+    color: var(--lang-text-01)
+}
+
+.tag-white {
+    background-color: var(--lang-white);
+    color: var(--lang-ui-00);
+}
+
+.tag-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}

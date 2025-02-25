@@ -1,0 +1,88 @@
+@import '../abstracts/mixin';
+
+html, body {
+    height: 100%;
+    font-family: 'IBMPlexSansKR-Regular';
+}
+
+#app {height: 100%;}
+
+.wrap {
+    height: 100%;
+    overflow: hidden;
+}
+
+.main {
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.shadow {
+    box-shadow: 3px 3px 5px var(--lang-shadow);
+}
+
+input, a, button, select, textarea {
+    font-family: 'IBMPlexSansKR-Regular';
+}
+
+input:active, input:focus, a:active, a:focus, button:focus, button:active, select:active, select:focus, textarea:active, textarea:focus {
+    outline: none;
+}
+
+div::-webkit-scrollbar, ul::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+}
+
+div::-webkit-scrollbar-thumb, ul::-webkit-scrollbar-thumb {
+    background-color: var(--lang-ui-05);
+    border-radius: 50px;
+}
+
+div::-webkit-scrollbar-track, ul::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+table {
+    tr {
+        td {
+            vertical-align: middle;
+
+            a {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+.mobile {
+    display: none!important;
+}
+
+.primary {
+    color: var(--lang-primary)!important;
+}
+
+.danger {
+    color: var(--lang-danger)!important;
+}
+
+.success {
+    color: var(--lang-success)!important;
+}
+
+@include tablet {
+    body {
+        overflow-y: hidden;
+        scrollbar-width: none
+    }    
+}
+
+@include mobile {
+    .mobile {display: flex!important;}
+}

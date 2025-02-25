@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- 라이브러리 -->
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <!-- 필터 바텀시트 -->
+    <div class="bottomsheet-container">
+        <div class="bottomsheet-layer"></div>
+        <div class="bottomsheet">
+            <div class="drag-handle"></div>
+            <div class="bottomsheet-con filter">
+                <div class="flex ai-center jc-between refresh">
+                    <button class="btn btn-icon btn-transparent pd0">
+                        <i class="fa-light fa-arrows-rotate"></i>
+                        초기화
+                    </button>
+                    <span class="primary">완료</span>
+                </div>
+                <div class="bottomsheet-list">
+                    <p class="menu-title">연동 카테고리</p>
+                    <ul>
+                        <li>
+                            <label for="">외부 연동</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">LLM 연동</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomsheet-list">
+                    <p class="menu-title">연동 여부</p>
+                    <ul>
+                        <li>
+                            <label for="">연동 완료</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">연동 미완료</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!-- 컨텍스트 메뉴 바텀시트 -->
+    <div class="bottomsheet-container">
+        <div class="bottomsheet-layer"></div>
+        <div class="bottomsheet">
+            <div class="drag-handle"></div>
+            <div class="bottomsheet-con">
+                <div class="list-menu bottomsheet-list">
+                    <ul>
+                        <li><button class="btn btn-transparent">상세보기</button></li>
+                        <li><button class="btn btn-transparent">현행선택</button></li>
+                        <li><button class="btn btn-transparent">수정하기</button></li>
+                        <li><button class="btn btn-transparent">삭제하기</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

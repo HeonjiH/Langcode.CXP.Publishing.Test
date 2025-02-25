@@ -1,0 +1,30 @@
+@import '../abstracts/mixin';
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --basic-font-size: 1rem;
+    --body-font-size: 0.875rem;
+    --button-font-size: 0.875rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.125rem;
+}
+
+h1 {font-size: 2.25rem; font-weight: 600;}
+h2 {font-size: 1.5rem; font-weight: 600;}
+h3 {font-size: 1.125rem; font-weight: 600;}
+h4 {font-size: 1rem; font-weight: 400;}
+body {font-size: 0.875rem;}
+button {font-size: 0.875rem;}
+
+@include tablet {
+    // h1 {font-size: 1.6875rem;}
+    // h2 {font-size: 1.125rem;}
+    // h3 {font-size: 0.844rem;}
+}

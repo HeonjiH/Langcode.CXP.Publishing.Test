@@ -1,0 +1,155 @@
+@import '../abstracts/mixin';
+
+.sidebar {
+    width: 3rem; height: 100%; background-color: var(--lang-ui-00); transition: all ease-in .3s; overflow: hidden;
+
+    .sidebar-layer {position: fixed; top: 0; bottom: 0; width: 100vw; height: 100vh; z-index: -1; background-color: rgba(22,22,22,0.5); display: none;}
+    .sidebar-top {display: none;}
+
+    .gnb {
+        position: relative; z-index: 2; height: 100%;
+        li {
+            button {
+                width: 100%; display: flex; gap: 10px; justify-content: center; align-items: center; padding: 0 1rem; border: none; background-color: var(--lang-ui-00); color: var(--lang-text-01);    
+                &:hover {background-color: #262626;}            
+                &.active {border-top: 2px solid var(--lang-primary); background-color: #262626;}
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+                flex-direction: column; 
+                p {display: none;}
+            }
+    
+        }    
+    }
+
+    .bottom-menu {
+        display: none;
+    }
+
+    &.expand {
+        width: 15rem;
+
+        .gnb {
+            li {
+                button {
+                    justify-content: inherit; flex-direction: row;
+                    p {display: block; font-size: 14px; max-width: auto; overflow: unset;}
+                }
+            }
+        }
+    }
+}
+
+
+@include tablet {
+    .sidebar {
+        display: none;
+        .gnb {
+            li {
+                &.menu {display: none;}
+            }
+        }
+
+        &.expand {
+            position: absolute;
+            z-index: 9990;
+            display: block;
+            box-shadow: 4px 0 20px 0 rgba(0,0,0,0.4);
+            .sidebar-layer {display: block;}
+        }
+    }
+}
+
+@include mobile {
+    .sidebar {
+        &.expand {
+            width: 80vw;
+        }
+
+        .sidebar-top {
+            background-color: var(--lang-ui-02);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem 0;
+            height: 48px;
+
+            .logo {
+                color: var(--lang-white);
+                font-size: 1.125rem;
+                font-weight: 600;
+            }
+
+            .profile {
+                img {
+                    border-radius: 100%;
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+
+        .gnb {
+            background-color: var(--lang-ui-02);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 8px;
+            box-sizing: border-box;
+            height: calc(100% - 112px);
+
+            li {
+                button {
+                    background-color: var(--lang-ui-02);
+
+                    &.active {
+                        border-top: none;
+                        border-left: 2px solid var(--lang-primary);
+                        background-color: var(--lang-ui-03);
+                    }
+                }
+            }
+        }
+
+        .bottom-menu {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            height: 56px;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: var(--lang-ui-03);
+
+            li {
+                width: 100%;
+                position: relative;
+
+                &:not(:last-child)::after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 1px;
+                    height: 16px;
+                    background-color: var(--lang-text-04);
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+                button {
+                    width: 100%; 
+                    display: flex; 
+                    gap: 8px; 
+                    justify-content: inherit; 
+                    align-items: center; 
+                    padding: 0 1rem; 
+                    border: none; 
+                    background-color: var(--lang-ui-03); 
+                    color: var(--lang-text-01);
+                }
+            }
+        }
+    }
+}

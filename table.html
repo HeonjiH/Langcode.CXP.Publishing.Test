@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>CXP V2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 -->
+    <link href="lib/fontawesome-pro-6.1.1-web/css/all.min.css?v=jq97s1DBy3ajfke99Lg5PYCF8cAAIiBz9CGw7sAGzfU" rel="stylesheet">
+
+    <!-- 라이브러리 -->
+    <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebar = document.getElementsByClassName("sidebar")[0];
+            const sidelayer = document.getElementsByClassName("sidebar-layer")[0];
+            const content = document.getElementById("main")
+            const toggleBtn = document.getElementsByClassName("menu")[0];
+
+            toggleBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                content.classList.toggle("expand");
+            });
+
+            const mobileBtn = document.getElementsByClassName("mobile-menu")[0];
+            mobileBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+            })
+            sidelayer.addEventListener("click", function() {
+                sidebar.classList.remove("expand");
+                content.classList.remove("expand");
+            })
+        });
+    </script>
+</head>
+<body>
+    <!-- 
+    테이블 사용하는 페이지 목록
+    1. 봇 상세보기 - 연동 데이터, 참여 멤버, 연동 데이터 > 지식베이스 상세
+    2. 지식베이스 - 전체 지식베이스 관리, 지식베이스 상세(지식데이터, 사용자 사전)
+    3. 프롬프트 - 프롬프트 관리 (표 보기)
+    4. 외부 연동 - 외부 연동 상세 
+    5. 설정 - 사용자 관리 (일반 사용자, 관리자)
+    6. 결재함 
+    -->
+    <div class="table-wrap">
+        <div class="table-select pr0">
+            <div><span>2 선택</span></div>
+            <div class="btn-wrap">
+                <div>
+                    <button class="btn-lg btn btn-primary btn-icon">
+                        다운로드
+                        <i class="fa-sharp fa-regular fa-arrow-down-to-bracket"></i>
+                    </button>
+                    <button class="btn-lg btn btn-primary btn-icon">
+                        삭제하기
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                    </button>
+                </div>
+                <button class="btn btn-lg btn-primary">취소</button>
+            </div>
+        </div>
+        <div class="table-search">
+            <div class="input-item input-search borderless">
+                <input type="text" class="input-md">
+                <div class="flex ai-center">
+                    <button class="btn btn-transparent btn-lg icon-only">
+                        <i class="far fa-magnifying-glass"></i>
+                    </button>
+                    <!-- 사용자 관리 필터링 -->
+                    <button class="btn btn-transparent btn-lg icon-only">
+                        <i class="far fa-filter"></i>
+                        <div class="context-menu">
+                            <div class="drag-handle"></div>
+                            <div class="context-menu-con">
+                                <div>
+                                    <p class="menu-title">역할</p>
+                                    <ul>
+                                        <li>
+                                            <label for="">총 관리자</label>
+                                            <div class="input-item chk-item">
+                                                <input type="checkbox" checked>
+                                                <label for="" class="label-cb"></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">봇관리자</label>
+                                            <div class="input-item chk-item">
+                                                <input type="checkbox" checked>
+                                                <label for="" class="label-cb"></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">사용자</label>
+                                            <div class="input-item chk-item">
+                                                <input type="checkbox">
+                                                <label for="" class="label-cb"></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="menu-title">부서</p>
+                                    <ul>
+                                        <li>
+                                            <label for="">마케팅팀</label>
+                                            <div class="input-item chk-item">
+                                                <input type="checkbox">
+                                                <label for="" class="label-cb"></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">내용</label>
+                                            <div class="input-item chk-item">
+                                                <input type="checkbox">
+                                                <label for="" class="label-cb"></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="context-btn-wrap">
+                                <div role="button" class="btn btn-default btn-lg btn-icon">
+                                    초기화
+                                    <i class="fa-sharp fa-light fa-arrows-rotate"></i>
+                                </div>
+                                <div role="button" class="btn btn-primary btn-lg btn-icon">
+                                    적용하기
+                                    <i class="fa-light fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- 지식베이스 상세_지식데이터 -->
+                    <button class="btn btn-transparent btn-lg icon-only">
+                        <i class="far fa-gear"></i>
+                        <div class="context-menu">
+                            <div class="drag-handle"></div>
+                            <div class="context-menu-con">
+                                <div class=""> <!-- pb0 -->
+                                    <p class="menu-title">표에 표시하기</p>
+                                    <ul>
+                                        <li>
+                                            <label for="">등록일</label>
+                                            <div role="button" class="btn btn-transparent icon-only">
+                                                <i class="fa-light fa-eye-slash"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">등록자</label>
+                                            <div role="button" class="btn btn-transparent icon-only">
+                                                <i class="fa-light fa-eye-slash"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">최종 편집자</label>
+                                            <div role="button" class="btn btn-transparent icon-only">
+                                                <i class="fa-light fa-eye-slash"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="">최종 업데이트일</label>
+                                            <div role="button" class="btn btn-transparent icon-only">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <button class="btn btn-lg btn-primary btn-icon">멤버 초대하기 <i class="far fa-plus"></i></button>
+        </div>
+        <!-- 데이터 펼치기 -->
+        <div id="table" class="table">
+            <table class="w100p">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </th>
+                        <th></th>
+                        <th> 
+                            <button class="btn btn-transparent">
+                                <i class="fa-regular fa-arrow-down"></i>
+                            </button>
+                            이름
+                        </th>
+                        <th>이메일</th>
+                        <th>부서</th>
+                        <th>직급</th>
+                        <th>
+                            <button class="btn btn-transparent">
+                                <i class="far fa-arrow-down"></i>
+                            </button>
+                            역할
+                        </th>
+                        <th>사용 봇</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <div class="dropdown-wrap" style="width: fit-content">
+                                <div class="dropdown">
+                                    <button class="dropdown-grey-01 dropdown-border">
+                                        <span class="dropdown-txt">다크모드</span>
+                                        <span class="dropdown-icon">
+                                            <i class="fa-sharp fa-solid fa-caret-down"></i>
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-list hidden">
+                                        <li class="dropdown-list-item">
+                                            <button><span>다크모드</span></button>
+                                        </li>
+                                        <li class="dropdown-list-item">
+                                            <button><span>화이트모드</span></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <div class="dropdown"></div>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="btn btn-transparent" href="javascript:$('#table1').toggle();">
+                                <i class="fa-light fa-chevron-down"></i>
+                            </a>
+                        </td>
+                        <td>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dep2" style="display: none;" id="table1">
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td><span class="tag tag-md tag-default-02" style="margin-right: 6px;">V2</span>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="dep2 collapse table1">
+                        <td>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" class="input-transparent">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </td>
+                        <td><span class="tag tag-md tag-default-02" style="margin-right: 6px;">V2</span>홍길동</td>
+                        <td>abcdefg@gmail.com</td>
+                        <td>마케팅팀</td>
+                        <td>팀장</td>
+                        <td>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="tag tag-md tag-default-02 tag-delete">
+                                Tag
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            <div class="table-btn">
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                </button>
+                                <button class="btn btn-transparent">
+                                    <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <div class="left">
+                <div class="pagination-size">
+                    <select name="" id="">
+                        <option value="">10개씩 보기</option>
+                        <option value="" selected>20개씩 보기</option>
+                        <option value="">30개씩 보기</option>
+                        <option value="">40개씩 보기</option>
+                    </select>
+                </div>
+                <div class="pagination-count">1 - 14 of 14 items</div>
+            </div>
+            <div class="right">
+                <div class="pagination-current">
+                    <select name="" id="">
+                        <option value="">1</option>
+                    </select>
+                    <span>of</span>
+                    <span>1</span>
+                    <span>pages</span>
+                </div>
+                <div class="pagination-btn-wrap">
+                    <button class="btn btn-transparent btn-pagination">
+                        <i class="far fa-arrow-left"></i>
+                    </button>
+                    <button class="btn btn-transparent btn-pagination">
+                        <i class="far fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 드롭다운
+    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => {
+        const optionMenu = dropdownWrap.querySelector(".dropdown");
+        const selectBtn = optionMenu.querySelector("button");
+        const optionList = optionMenu.querySelector(".dropdown-list");
+        const options = optionMenu.querySelectorAll(".dropdown-list-item");
+        const sBtn_text = optionMenu.querySelector(".dropdown-txt");
+
+        selectBtn.addEventListener("click", () => {
+            optionMenu.classList.toggle("active");
+            optionList.classList.toggle("hidden");
+        });
+
+        options.forEach((option) => {
+            option.addEventListener("click", () => {
+                const selectedOption = option.querySelector("span").innerText;
+                sBtn_text.innerText = selectedOption;
+
+                optionList.classList.add("hidden");
+                optionMenu.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropdownWrap.contains(event.target)) {
+                optionMenu.classList.remove("active");
+                optionList.classList.add("hidden");
+            }
+        });
+    });
+</script>
+</html>

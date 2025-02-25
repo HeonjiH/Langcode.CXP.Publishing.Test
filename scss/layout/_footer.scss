@@ -1,0 +1,51 @@
+@import '../abstracts/mixin';
+
+/************************* footer *************************/
+#footer {
+    background-color: var(--lang-ui-01);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1rem;
+        box-sizing: border-box;
+    
+        .footer-info {
+            line-height: 135%;
+
+            span > span {
+                display: inline-block; margin-right: 0.5rem; position: relative;
+                &:not(:last-child)::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1px;
+                    height: 70%;
+                    background-color: var(--lang-text-01);
+                    top: 50%;
+                    right: -0.45rem;
+                    transform: translateY(-50%);
+                }
+            }
+            .copyright {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .footer-link {
+            a:not(:last-child) {
+                margin-right: 0.625rem;
+            }
+        }
+    }
+    
+    .btn-wrap .btn {padding: calc(.875rem - 3px) 0.938rem;}
+}
+
+@include tablet {
+    #footer {display: none;}
+}

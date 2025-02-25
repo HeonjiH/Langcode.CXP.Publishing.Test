@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>CXP V2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 -->
+    <link href="lib/fontawesome-pro-6.1.1-web/css/all.min.css?v=jq97s1DBy3ajfke99Lg5PYCF8cAAIiBz9CGw7sAGzfU" rel="stylesheet">
+
+    <!-- 라이브러리 -->
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-wrap">
+            <div class="left">
+                <button class="btn-transparent mobile-menu"><i class="far fa-bars"></i></button>
+                <h1 class="logo" onclick="location.href='index.html'">CXP V2</h1>
+            </div>
+            <div class="right">
+                <div class="search">
+                    <button class="search-btn" onclick="openSearch()">
+                        <i class="far fa-search"></i>
+                    </button>
+                    <div class="search-box">
+                        <div class="input-item input-search borderless">
+                            <div><i class="far fa-magnifying-glass"></i></div>
+                            <input type="text" class="input-md" placeholder="Search">
+                            <button class="btn clear" onclick="closeSearch()"><i class="far fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <ul>
+                        <li>
+                            <button>
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="location.href='notification.html'">
+                                <i class="fa-light fa-bell"></i>
+                            </button>
+                        </li>
+                        <li onclick="location.href='report.html'">
+                            <button>
+                                <i class="fa-light fa-triangle-exclamation"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="profile">
+                        <button>
+                            <img src="./images/user_img.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

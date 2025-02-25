@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>CXP V2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 -->
+    <link href="lib/fontawesome-pro-6.1.1-web/css/all.min.css?v=jq97s1DBy3ajfke99Lg5PYCF8cAAIiBz9CGw7sAGzfU" rel="stylesheet">
+
+    <!-- 라이브러리 -->
+    <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebar = document.getElementsByClassName("sidebar")[0];
+            const sidelayer = document.getElementsByClassName("sidebar-layer")[0];
+            const content = document.getElementById("main")
+            const toggleBtn = document.getElementsByClassName("menu")[0];
+
+            toggleBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                content.classList.toggle("expand");
+            });
+
+            const mobileBtn = document.getElementsByClassName("mobile-menu")[0];
+            mobileBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                content.classList.toggle("expand");
+            })
+            sidelayer.addEventListener("click", function() {
+                sidebar.classList.remove("expand");
+                content.classList.remove("expand");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            <header id="header">
+                <div class="header-wrap">
+                    <div class="left">
+                        <button class="btn-transparent mobile-menu"><i class="far fa-bars"></i></button>
+                        <h1 class="logo" onclick="location.href='index.html'">CXP V2</h1>
+                    </div>
+                    <div class="right">
+                        <div class="search">
+                            <button class="search-btn" onclick="openSearch()">
+                                <i class="far fa-search"></i>
+                            </button>
+                            <div class="search-box">
+                                <div class="input-item input-search borderless">
+                                    <div><i class="far fa-magnifying-glass"></i></div>
+                                    <input type="text" class="input-md" placeholder="Search">
+                                    <button class="btn clear" onclick="closeSearch()"><i class="far fa-xmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-menu">
+                            <ul>
+                                <li>
+                                    <button>
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onclick="location.href='notification.html'">
+                                        <i class="fa-light fa-bell"></i>
+                                    </button>
+                                </li>
+                                <li onclick="location.href='report.html'">
+                                    <button>
+                                        <i class="fa-light fa-triangle-exclamation"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="profile">
+                                <button>
+                                    <img src="./images/user_img.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="content-wrap">
+                <div class="sidebar">
+                    <div class="sidebar-layer"></div>
+                    <div class="sidebar-top">
+                        <h1 class="logo">
+                            CXP V2
+                        </h1>
+                        <div class="profile">
+                            <img src="./images/user_img.png" alt="">
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li class="menu">
+                            <button class="btn btn-lg">
+                                <i class="far fa-bars"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='index.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M14 1H2a1 1 0 0 0-1 1v12a1.001 1.001 0 0 0 1 1h12a1.001 1.001 0 0 0 1-1V2a1.001 1.001 0 0 0-1-1Zm0 3.5H2V2h12v2.5ZM2 14V5.5h12l.001 8.5H2Z"/><path fill="#fff" d="M13 7H9.5v1h1.795L8.5 10.855l-2.145-2.15a.5.5 0 0 0-.71 0L3 11.355l.705.705L6 9.765l2.145 2.15a.501.501 0 0 0 .71 0L12 8.705V10.5h1V7Z"/></svg>
+                                <p>대시보드</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='chat.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2.42l-1.71 3Z"/></svg>
+                                <p>채팅</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='bot.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
+                                <p>봇 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='knowledge.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M10.5 11.998h-5v1h5v-1ZM9.5 13.998h-3v1h3v-1ZM5.407 9.069A3.593 3.593 0 0 1 4 5.999a4.003 4.003 0 0 1 3-3.87l-.193-.98A5.004 5.004 0 0 0 3 5.998a4.59 4.59 0 0 0 1.73 3.808c.506.467.77.732.77 1.191h1c0-.92-.555-1.433-1.093-1.93ZM11.525 7.998a4.795 4.795 0 0 1-.936 1.072c-.536.496-1.089 1.009-1.089 1.928h1c0-.46.263-.725.768-1.192.472-.402.872-.881 1.184-1.417l-.927-.39ZM14 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 11 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 8.051 4H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1C9.673 6 9 5.327 9 4.5S9.673 3 10.5 3s1.5.673 1.5 1.5S11.327 6 10.5 6Z"/></svg>
+                                <p>지식베이스 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
+                                <p>프롬프트 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='integration.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8 13.5c-1.8 0-3.55-.9-4.6-2.5H6v-1H2v4h1v-1.85a6.457 6.457 0 0 0 5 2.35v-1ZM15.5 11.5v-1h-1.05c-.05-.3-.2-.6-.35-.9l.75-.75-.7-.7-.75.75c-.25-.15-.55-.3-.9-.35V7.5h-1v1.05c-.3.05-.6.2-.9.35l-.75-.75-.7.7.75.75c-.15.25-.3.55-.35.9H8.5v1h1.05c.05.3.2.6.35.9l-.75.75.7.7.75-.75c.25.15.55.3.9.35v1.05h1v-1.05c.3-.05.6-.2.9-.35l.75.75.7-.7-.75-.75c.15-.25.3-.55.35-.9h1.05Zm-3.5 1c-.85 0-1.5-.65-1.5-1.5s.65-1.5 1.5-1.5 1.5.65 1.5 1.5-.65 1.5-1.5 1.5ZM10 5h2.6C10.95 2.45 7.55 1.75 5 3.4A5.5 5.5 0 0 0 2.5 8h-1c0-3.6 2.9-6.5 6.5-6.5 1.95 0 3.75.85 5 2.35V2h1v4h-4V5Z"/></svg>
+                                <p>외부 연동 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='approval_submit.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M12.5 2.5H11V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v.5H3.5a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1ZM6 2h4v2H6V2Zm6.5 12h-9V3.5H5V5h6V3.5h1.5V14Z"/></svg>
+                                <p>결재함</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg active" onclick="location.href='setting_company.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M13.5 8.38v-.765l.96-.84a1 1 0 0 0 .19-1.275l-1.18-2a1 1 0 0 0-1.185-.45l-1.215.41a5.677 5.677 0 0 0-.655-.375l-.255-1.26a1 1 0 0 0-1-.805H6.82a1 1 0 0 0-1 .805l-.255 1.26a5.74 5.74 0 0 0-.66.375l-1.19-.43a1 1 0 0 0-.32-.03 1 1 0 0 0-.865.5l-1.18 2a1 1 0 0 0 .205 1.255l.945.865v.765l-.945.84A1 1 0 0 0 1.35 10.5l1.18 2a1 1 0 0 0 1.185.45l1.215-.41c.21.14.429.264.655.375l.255 1.26a1 1 0 0 0 1 .805H9.2a1 1 0 0 0 1-.805l.255-1.26c.228-.11.448-.236.66-.375l1.21.41a1 1 0 0 0 1.185-.45l1.14-2a1 1 0 0 0-.205-1.255L13.5 8.38ZM12.605 12l-1.715-.58c-.402.34-.86.606-1.355.785L9.18 14H6.82l-.355-1.775a4.68 4.68 0 0 1-1.35-.785l-1.72.56-1.18-2 1.36-1.2a4.45 4.45 0 0 1 0-1.565L2.215 6l1.18-2 1.715.58a4.43 4.43 0 0 1 1.355-.785L6.82 2h2.36l.355 1.775c.49.184.947.45 1.35.785l1.72-.56 1.18 2-1.36 1.2a4.448 4.448 0 0 1 0 1.565L13.785 10l-1.18 2Z"/><path fill="#fff" d="M8 11a3 3 0 1 1 3-3 2.97 2.97 0 0 1-3 3Zm0-5a1.955 1.955 0 0 0-2 2 1.955 1.955 0 0 0 2 2 1.955 1.955 0 0 0 2-2 1.954 1.954 0 0 0-2-2Z"/></svg>
+                                <p>설정</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='monitoring.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 18"><path stroke="#fff" stroke-width="2" d="M0 9.105h4.324L6.486 3l4.325 12 2.594-5.895H16"/></svg>
+                                <p>모니터링</p>
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="bottom-menu">
+                        <li>
+                            <button class="btn btn-md">
+                                <i class="far fa-bookmark"></i>
+                                <p>북마크</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-md">
+                                <i class="fa-light fa-bell"></i>
+                                <p>알림</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-md">
+                                <i class="fa-light fa-triangle-exclamation"></i>
+                                <p>신고</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lnb-wrap panel-wrap second-panel">
+                    <div class="panel-title">
+                        <button class="btn-transparent mobile-menu" onclick="mobileMenu()"><i class="far fa-bars"></i></button>
+                        <h3>설정</h3>
+                    </div>
+                    <ul class="lnb">
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_company.html'">
+                                <p>회사 설정</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_profile.html'">
+                                <p>내 계정 설정</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_default.html'">
+                                <p>기본 설정</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_user.html'">
+                                <p>사용자 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_role.html'">
+                                <p>역할&권한 설정</p>
+                            </button>
+                        </li>
+                        <li class="active">
+                            <button class="btn btn-lg" onclick="location.href='setting_report.html'">
+                                <p>신고</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <main id="main" class="">
+                    <!-- 신고 전달 모달 -->
+                    <div class="modal-container" style="display: none;" id="modal1">
+                        <div class="modal-wrap">
+                            <div class="modal-content">
+                                <div class="modal-content-header pr0">
+                                    <p class="modal-title">랭코드에 전달</p>
+                                    <button class="btn btn-transparent" onclick="closeModal(this)">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-content-body">
+                                    <div class="group-wrap">
+                                        <div class="form">
+                                            <div class="form-content">
+                                                <div class="form-input vertical">
+                                                    <label for="">선택 신고 항목</label>
+                                                    <span>
+                                                        <span>UI(홍길동 (abcdefg@gmail.com)) <button class="btn btn-transparent pd0"><i class="far fa-xmark"></i></button> </span><br>
+                                                        <span>파일 업로드 / 다운로드(홍길동 (abcdefg@gmail.com)) <button class="btn btn-transparent pd0"><i class="far fa-xmark"></i></button></span><br>
+                                                        <span>네트워크 또는 속도 느림(홍길동 (abcdefg@gmail.com)) <button class="btn btn-transparent pd0"><i class="far fa-xmark"></i></button></span><br>
+                                                    </span>
+                                                </div>
+                                                <div class="form-input vertical">
+                                                    <label for="">추가 사항</label>
+                                                    <div class="input-item input-textarea">
+                                                        <textarea type="text" class="textarea-md textarea-default" placeholder="추가 사항 입력"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-btn-wrap">
+                                <button class="btn btn-default btn-lg">취소</button>
+                                <button class="btn btn-primary btn-lg">이메일 보내기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일 상세 모달 -->
+                    <div class="modal-container" style="display: none;" id="modal2">
+                        <div class="modal-wrap w100p">
+                            <div class="modal-content">
+                                <div class="modal-content-body pd0">
+                                    <div class="box-wrap sticky-box">
+                                        <div class="box-title small pr0">
+                                            <div>
+                                                <span class="tag tag-default-02 tag-md">V3.2</span>
+                                                <span>파일명</span>
+                                            </div>
+                                            <div class="view-size">
+                                                <button class="btn btn-transparent">-</button>
+                                                <input type="text" class="input-default-02 input-sm borderless" value="100%">
+                                                <button class="btn btn-transparent">+</button>
+                                            </div>
+                                            <div class="btn-wrap flex ai-center mg0">
+                                                <button class="btn btn-transparent" onclick="closeModal(this)">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-con" style="text-align: center;">
+                                            <iframe src="" frameborder="0" style="background-color: #ddd; width: 70%; min-height: 1000px;"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container setting-container">
+                        <div class="page-title">
+                            <div class="breadcrumb">
+                                <span>설정</span>
+                                <span>></span>
+                                <span>신고</span>
+                            </div>
+                            <div class="mobile mobile-title">
+                                <button class="btn btn-transparent btn-lg" onclick="history.back()">
+                                    <i class="fa-light fa-chevron-left"></i>
+                                </button>
+                                <p>신고</p>
+                            </div>
+                        </div>
+                        <div class="page-content setting-content flex pd0">
+                            <div class="section-wrap report-wrap">
+                                <div class="section-item report-list">
+                                    <div class="section-title">
+                                        <h3>신고 리스트</h3>
+                                    </div>
+                                    <div class="table-wrap shadow">
+                                        <div class="table-select pr0">
+                                            <div><span>2 선택</span></div>
+                                            <div class="btn-wrap">
+                                                <div>
+                                                    <button class="btn-lg btn btn-primary btn-icon">
+                                                        다운로드
+                                                        <i class="fa-sharp fa-regular fa-arrow-down-to-bracket"></i>
+                                                    </button>
+                                                    <button class="btn-lg btn btn-primary btn-icon" onclick="openModal('modal1')">
+                                                        랭코드 전달
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#161616" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Zm-1.1 1L8 7.39 3.1 4h9.8ZM2 12V4.455L7.715 8.41a.5.5 0 0 0 .57 0L14 4.455V12H2Z"/></svg>
+                                                    </button>
+                                                </div>
+                                                <button class="btn btn-lg btn-primary">취소</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-search">
+                                            <div class="input-item input-search borderless">
+                                                <input type="text" class="input-md">
+                                                <div class="flex ai-center">
+                                                    <button class="btn btn-transparent btn-lg icon-only">
+                                                        <i class="far fa-magnifying-glass"></i>
+                                                    </button>
+                                                    <button class="btn btn-transparent btn-lg icon-only">
+                                                        <i class="far fa-filter"></i>
+                                                    </button>
+                                                    <button class="btn btn-transparent btn-lg icon-only">
+                                                        <i class="far fa-gear"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="table" class="table">
+                                            <table class="w100p">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" class="input-transparent" id="chk_table">
+                                                                <label for="chk_table" class="label-cb"></label>
+                                                            </div>
+                                                        </th>
+                                                        <th>항목</th>
+                                                        <th>상세 입력</th>
+                                                        <th>신고자</th>
+                                                        <th>
+                                                            <button class="btn btn-transparent pl0">
+                                                                <i class="far fa-arrow-down"></i>
+                                                            </button>
+                                                            신고일
+                                                        </th>
+                                                        <th>상태</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr onclick="togglePanel('panel1', this)">
+                                                        <td>
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" class="input-transparent" id="chk_1">
+                                                                <label for="chk_1" class="label-cb"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>UI</td>
+                                                        <td>아름드리 도서 여우별 다솜 가온해 책방 다솜 노트북</td>
+                                                        <td>홍길동 (abcd@gmail.com)</td>
+                                                        <td>0000-00-00 00:00</td>
+                                                        <td>대기</td>
+                                                    </tr>
+                                                    <tr onclick="togglePanel('panel1', this)">
+                                                        <td>
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" class="input-transparent" id="chk_2">
+                                                                <label for="chk_2" class="label-cb"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>파일 업로드/다운로드</td>
+                                                        <td>아름드리 도서 여우별 다솜 가온해 책방 다솜 노트북</td>
+                                                        <td>홍길동 (abcd@gmail.com)</td>
+                                                        <td>0000-00-00 00:00</td>
+                                                        <td class="success">완료</td>
+                                                    </tr>
+                                                    <tr onclick="togglePanel('panel1', this)">
+                                                        <td>
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" class="input-transparent" id="chk_3">
+                                                                <label for="chk_3" class="label-cb"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>네트워크 또는 속도 느림</td>
+                                                        <td>아름드리 도서 여우별 다솜 가온해 책방 다솜 노트북</td>
+                                                        <td>홍길동 (abcd@gmail.com)</td>
+                                                        <td>0000-00-00 00:00</td>
+                                                        <td class="danger">반려</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination">
+                                            <div class="left">
+                                                <div class="pagination-size">
+                                                    <select name="" id="">
+                                                        <option value="">10개 선택</option>
+                                                        <option value="" selected>20개 선택</option>
+                                                        <option value="">30개 선택</option>
+                                                        <option value="">40개 선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="pagination-current">
+                                                    <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select>
+                                                    <span>/</span>
+                                                    <span>10</span>
+                                                    <span>pages</span>
+                                                </div>
+                                                <div class="pagination-btn-wrap">
+                                                    <button class="btn btn-transparent btn-pagination">
+                                                        <i class="far fa-arrow-left"></i>
+                                                    </button>
+                                                    <button class="btn btn-transparent btn-pagination">
+                                                        <i class="far fa-arrow-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fourth-panel panel-wrap inner report-info" id="panel1">
+                                <div class="panel-layer"></div>
+                                <div class="panel-con">
+                                    <div class="panel-title pr0">
+                                        <h3>신고 상세</h3>
+                                        <div class="title-menu flex">
+                                            <button class="btn btn-transparent" onclick="closePanel()">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="panel-content-wrap">
+                                        <div class="form">
+                                            <div class="form-content">
+                                                <div class="form-box">
+                                                    <div class="form-input vertical">
+                                                        <label for="">신고자</label>
+                                                        <span>홍길동 (abcdef@gmail.com)</span>
+                                                    </div>
+                                                    <div class="form-input vertical">
+                                                        <label for="">신고일</label>
+                                                        <span>0000-00-00 00:00</span>
+                                                    </div>
+                                                    <div class="form-input vertical">
+                                                        <label for="">항목</label>
+                                                        <span>UI</span>
+                                                    </div>
+                                                    <div class="form-input vertical">
+                                                        <label for="">상세 입력</label>
+                                                        <span>
+                                                            미쁘다 다솜 아련 아름드리 소록소록 별하 도르레 아슬라 별하 컴퓨터 도담도담 미리내 
+                                                            바람꽃 아슬라 바람꽃 여우비 도서 감사합니다 가온누리 예그리나 별하 그루잠 감또개 
+                                                            바람꽃 도담도담 미리내 아름드리 도서 여우별 다솜 가온해 책방 다솜 노트북 나비잠 바람꽃 
+                                                            바람꽃 사과 안녕 여우비 곰다시 도서관 도담도담 다솜 가온누리 예그리나 소록소록 소록소록 
+                                                            도서관 도르레.
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-input vertical">
+                                                        <label for="">첨부 파일</label>
+                                                        <div class="default-list button-list">
+                                                            <ul>
+                                                                <li onclick="openModal('modal2')">
+                                                                    <div class="flex ai-center">
+                                                                        <i class="fa-light fa-file"></i>
+                                                                        <span style="margin-left: 10px;">파일명.jpg</span>
+                                                                    </div>
+                                                                    <span>0000-00-00</span>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="flex ai-center">
+                                                                        <i class="fa-light fa-file"></i>
+                                                                        <span style="margin-left: 10px;">파일명.jpg</span>
+                                                                    </div>
+                                                                    <span>0000-00-00</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class44="form-box">
+                                                    <div class="form-input vertical">
+                                                        <label for="">비고</label>
+                                                        <div class="input-item input-textarea">
+                                                            <textarea name="" id="" class="textarea-default" placeholder="비고 입력"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-input vertical">
+                                                        <label for="">상태</label>
+                                                        <div class="dropdown-wrap w100p">
+                                                            <div class="dropdown">
+                                                                <button class="dropdown-md dropdown-default">
+                                                                    <span class="dropdown-txt">완료</span>
+                                                                    <span class="dropdown-icon">
+                                                                        <i class="far fa-chevron-down"></i>
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-list hidden">
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>완료</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span></span></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <button class="btn btn-primary btn-lg w100p btn-icon" disabled>
+                                                    전송하기
+                                                    <i class="far fa-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 드롭다운
+    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => {
+        const optionMenu = dropdownWrap.querySelector(".dropdown");
+        const selectBtn = optionMenu.querySelector("button");
+        const optionList = optionMenu.querySelector(".dropdown-list");
+        const options = optionMenu.querySelectorAll(".dropdown-list-item");
+        const sBtn_text = optionMenu.querySelector(".dropdown-txt");
+
+        selectBtn.addEventListener("click", () => {
+            optionMenu.classList.toggle("active");
+            optionList.classList.toggle("hidden");
+        });
+
+        options.forEach((option) => {
+            option.addEventListener("click", () => {
+                const selectedOption = option.querySelector("span").innerText;
+                sBtn_text.innerText = selectedOption;
+
+                optionList.classList.add("hidden");
+                optionMenu.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropdownWrap.contains(event.target)) {
+                optionMenu.classList.remove("active");
+                optionList.classList.add("hidden");
+            }
+        });
+    });
+</script>
+</html>

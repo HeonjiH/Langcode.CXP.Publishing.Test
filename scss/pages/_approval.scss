@@ -1,0 +1,45 @@
+.approval-status {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 126px;
+            padding: 5px;
+            box-sizing: border-box;
+
+            &.now {
+                background-color: var(--lang-ui-03);
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 2px;
+                    height: 100%;
+                    left: -1px;
+                    top: 0;;
+                    background-color: var(--lang-primary);
+                }
+            }
+        }
+    }
+
+    .status {
+        background-color: var(--lang-ui-04);
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 25px;
+        font-size: .75rem;
+    }
+    .status-danger {
+        background-color: var(--lang-danger);
+    }
+    .status-success {
+        background-color: var(--lang-success);
+    }
+}

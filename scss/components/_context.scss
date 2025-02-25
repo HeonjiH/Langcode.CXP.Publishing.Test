@@ -1,0 +1,96 @@
+.context-menu {
+    width: max-content;
+    min-width: 280px;
+    // min-width: 144px;
+    // max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 1; // 0
+    visibility: visible; // hidden
+    z-index: 9;
+    white-space: nowrap;
+    background-color: var(--lang-ui-03);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+
+    &.context-default {
+        min-width: 200px;
+        top: 70%;
+        right: -70%;
+
+        .context-menu-con {
+            > div {
+                padding: 0;
+
+                ul {
+                    li {
+                        padding: 12px;
+                        height: 40px;
+                        
+                        &:not(:last-child) {
+                            border-bottom: 1px solid var(--lang-table-border); 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .context-menu-con {
+        > div {
+            padding: 13px;
+            box-sizing: border-box;
+            border-bottom: 1px solid var(--lang-table-border);
+            color: var(--lang-white);
+
+            .menu-title {
+                font-size: 12px;
+                margin-bottom: 12px;
+                color: var(--lang-text-03);
+            }
+
+            ul {
+                li {
+                    padding: 12px 0;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;;
+
+                    .chk-item {
+                        input[type=checkbox] 
+                        {
+                            &:checked + label.label-cb {
+                                background-color: var(--lang-primary);
+                                border: 1px solid var(--lang-ui-00)!important;
+                            }
+                        }
+                        .label-cb {
+                            background-color: transparent;
+                            border: 1px solid var(--lang-white)!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .context-btn-wrap {
+        display: flex;
+        gap: 0;
+
+        > div {
+            width: 100%;
+            &.btn-primary {color: var(--lang-ui-00);}
+        }
+    }
+
+    
+}
+
+@include mobile {
+    
+    
+}

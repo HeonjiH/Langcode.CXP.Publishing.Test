@@ -1,0 +1,240 @@
+@import '../abstracts/mixin';
+
+.form-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 9;
+
+    button {
+        min-width: 200px;
+    }
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    .form-content {
+        padding-bottom: 20px;
+        box-sizing: border-box;
+
+        .title {
+            font-size: var(--lang-font-h3);
+            font-weight: 600;
+            margin-bottom: 2rem;
+
+            h5 {
+                font-size: 1.125rem;
+            }
+
+            .required-desc {
+                display: block;
+                margin-top: 10px;
+                font-size: 0.8rem;
+                color: var(--lang-text-01);
+                font-weight: 400;
+                line-height: 135%;
+            }
+
+            .desc {
+                line-height: 130%;
+                font-size: 0.8rem;
+                color: var(--lang-ui-06);
+                margin-top: 0.8rem;
+            }
+        }
+
+        hr {
+            margin: 40px auto;
+            border-color: #525252;
+        }
+
+        .form-box {
+            .title {
+                display: block;
+                font-size: 0.8rem;
+                color: var(--lang-text-01);
+                font-weight: 400;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        .form-input {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            span {
+                line-height: 135%;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            &.vertical {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                width: 100%;
+
+                > label {
+                    width: 100%;
+                    position: relative;
+
+                    .count {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 12px;
+                        color: var(--lang-text-03);
+                        font-weight: 400;
+
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .input-item {
+                    width: 70%;
+                    line-height: 135%;
+
+                    &.radio-item {
+                        width: auto!important;
+                    }
+                }
+                
+            }
+
+            &.static {
+                > label {
+                    color: var(--lang-text-03);
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+
+            > label {
+                width: 200px;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: var(--lang-text-01);
+
+                &.dep2-title, &.small {
+                    font-size: 0.75rem;
+                    color: var(--lang-text-03);
+                    font-weight: 500;
+                }
+
+                .required {
+                    font-size: var(--lang-font-basic);
+                }
+            }   
+
+            .form-chk {
+                display: flex;
+                flex-direction: column;
+                width: calc(100% - 200px - 2rem);
+
+                .desc {
+                    color: var(--lang-text-03);
+                    padding-left: 20px;
+                }
+            }
+
+            .input-item {
+                width: calc(100% - 200px - 2rem);
+
+                input {
+                    width: 100%;
+                }
+
+                textarea {
+                    width: 100%;
+                }
+
+                .dropdown-default {
+                    &:hover {
+                        background-color: var(--lang-ui-03);
+                    }
+                }
+
+                p {
+                    line-height: 140%;
+                }
+
+                .input-file {
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+
+            // .dropdown-wrap {
+            //     width: calc(100% - 200px - 2rem);
+            // }
+
+            &:last-child {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+}
+
+@include tablet {
+    .form {
+        .form-content {
+            .form-input {
+                // flex-direction: column;
+                // align-items: flex-end;
+                gap: 0.8rem;
+
+                > label {
+                    width: 100%;
+                }
+
+                .input-item {
+                    width: 100%;
+                }
+
+                .input-desc {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .form-btn {
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        background-color: var(--lang-ui-02);
+        z-index: 2;
+
+        button {
+            width: 100%;
+            min-width: auto;
+        }
+    }
+
+    .form {
+        .form-content {
+            padding-bottom: 84px;
+
+        }
+    }
+}

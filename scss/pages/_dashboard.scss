@@ -1,0 +1,323 @@
+@import '../abstracts/mixin';
+
+.dashboard-container {
+    overflow: hidden; height: 100%;
+
+    .page-content {
+        padding: 2.5rem; box-sizing: border-box; overflow-y: auto!important;
+
+        .dashboard-item {
+            color: var(--lang-text-01);
+    
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+    
+            .filter-wrap {
+                background-color: var(--lang-ui-03);
+    
+                .filter-title {
+                    width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; font-size: var(--basic-font-size); box-sizing: border-box; cursor: pointer;
+                    font-size: 0.875rem;
+
+                    &.active {
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+                }
+
+                .filter-content {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+
+                    .filter-content-wrap {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        padding: 1rem;
+                        box-sizing: border-box;
+                        
+                        .filter {
+                            display: flex; align-items: center; gap: 20px; flex-wrap: wrap; min-height: 32px;
+
+                            > label {white-space: nowrap; min-width: 80px; font-weight: 600;}
+
+                            .target-wrap {
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                            }
+
+                            .dropdown-wrap {
+                                min-width: 80px; width: fit-content;
+
+                                .dropdown {
+                                    width: 100%;
+                                    .dropdown-list {position: fixed; width: fit-content;}
+                                    button {min-width: 80px; width: fit-content;}
+                                }
+
+                                .dropdown-list {
+                                    display: flex;
+                                    background-color: var(--lang-ui-03);
+                                    max-height: none;
+                                    box-shadow: 0 2px 40px 0 rgba(0,0,0,0.7);
+
+                                    > div {
+                                        min-width: 180px;
+                                        padding: 1rem;
+                                        box-sizing: border-box;
+
+                                        > label {
+                                            display: block;
+                                            font-size: 12px;
+                                            color: var(--lang-text-03);
+                                            margin-bottom: 20px;
+                                        }
+
+                                        ul {
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 20px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .datepicker {
+                                input {
+                                    min-width: 150px; max-width: 200px;
+                                }
+                            }
+
+                            .radio-wrap {
+                                .radio-item {
+
+                                    input[type="radio"]:checked,
+                                    input[type="radio"]:not(:checked) {
+                                
+                                        + label {
+                                            padding-left: 19px;
+                                            line-height: 14px;
+                                            font-size: 12px;
+                                
+                                            &:before {
+                                                width: 12px;
+                                                height: 12px;
+                                            }
+                                
+                                            &:after {
+                                                width: 6px;
+                                                height: 6px;
+                                                top: 4px;
+                                                left: 3.8px;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    .filter-btn-wrap {
+                        border-top: 1px solid var(--lang-ui-02);
+                        padding: 1rem;
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: space-between;
+                        height: 48px;
+                        
+                        > button {
+                            color: var(--lang-text-03);
+                            gap: 8px;
+                            padding: 0;
+                        }
+
+                        .btn-wrap {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            button {
+                                padding: 0
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .summary-wrap {
+                display: grid; grid-template-columns: repeat(4, 1fr); background-color: var(--lang-ui-03);
+    
+                .summary-item {
+                    padding: 1rem; box-sizing: border-box;
+    
+                    .summary-title {
+                        position: relative;
+                        margin-bottom: 20px;
+    
+                        .title-txt {
+                            font-weight: 600;
+                        }
+                    }
+                    .summary-numeric {
+                        display: flex; align-items: flex-end; gap: 30px;
+                        .now {font-weight: 600; font-size: var(--h2-font-size);}
+                        .percent {display: flex; align-items: center; gap: 3px;}
+                    }
+                }
+                
+            }
+    
+            .chart-wrap {
+                display: flex; flex-direction: column; gap: 8px;
+                .chart-item {
+                    display: grid; grid-template-columns: calc(70% - 8px) 30%; gap: 8px;
+                    &.full {grid-template-columns: 100%;}
+                    .chart-box {
+                        background-color: var(--lang-ui-03); padding: 0.75rem; box-sizing: border-box;
+                        
+                        .chart-title {padding: .75rem 1rem; box-sizing: border-box;}
+                        .chart-info {position: relative;}
+    
+                    }
+                }
+            }
+
+            .btn-info {
+                position: relative;
+
+                .tooltip {
+                    display: none;
+                    position: absolute;
+                    top: -55px;
+                    left: -300%;
+                    background-color: #333;
+                    color: #fff;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                    z-index: 10;
+                    width: auto;
+                    min-width: 120px;
+                    text-align: left;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}
+
+
+@include tablet {
+    .dashboard-container {
+        .page-content {
+            padding: 1.25rem;
+
+            .dashboard-item {
+                .filter-wrap {
+                    .filter-content {
+                        .filter-content-wrap {
+                            flex-direction: column; align-items: flex-start; gap: 20px;
+
+                            > * {width: 100%}
+
+                            .filter {
+                                .dropdown-wrap {
+                                    .dropdown-list {
+                                        > div {
+                                            min-width: 120px;
+                                        }
+                                    }
+                                }
+
+                                .datepicker {
+                                    input {
+                                        padding: 0 .8rem;
+                                        min-width: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .summary-wrap {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .chart-wrap {
+                    .chart-item {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile {
+    .dashboard-container {
+        .page-title {
+            button {
+                min-width: auto;
+            }
+        }
+
+        .page-content {
+            padding: 0;
+            
+            .dashboard-item {
+                &:not(:first-child) {
+                    margin: 0 1.25rem 20px;
+                }
+
+                &:first-child {
+                    position: sticky;
+                    top: 0;
+                    z-index: 99;
+
+                    > div {
+                        width: 100%;
+                        background-color: var(--lang-ui-02);;
+                    }
+                }
+
+                .filter-wrap {
+                    .filter-title {
+                        padding: 1rem;
+                        border-bottom: 1px solid var(--lang-ui-00);
+                        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+
+                        .left {
+                            span {
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .right {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

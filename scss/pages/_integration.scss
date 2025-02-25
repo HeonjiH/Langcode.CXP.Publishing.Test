@@ -1,0 +1,255 @@
+.integration-content {
+    //overflow-y: hidden!important;
+    display: flex;
+    width: 100%;
+
+    .integration-wrap {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        > div {
+            box-sizing: border-box;
+        }
+
+        > .left {
+            border-right: 1px solid var(--lang-ui-01);
+            width: 17.5rem;
+            padding: 1.5rem;
+            overflow-y: hidden;
+            
+            .refresh {
+                display: none;
+            }
+
+            .filter {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                
+                .filter-item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    > label {
+                        font-size: 12px;
+                        color: var(--lang-text-03);
+                    }
+                }
+            }
+        }
+
+        > .right {
+            padding: 1.875rem;
+            width: calc(100% - 17.5rem);
+            height: 100%;
+            overflow-y: auto;
+
+            > .btn-wrap {
+                display: none;
+            }
+        }
+
+        .integration-detail {
+            width: 100%;
+            padding: 1.875rem;
+            box-sizing: border-box;
+        }
+        
+    }
+
+    .panel-wrap {
+        display: none;
+    
+        &.active {
+            display: block;
+        }
+    }
+    
+}
+
+.integration-setting-info {
+    width: 22.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+    > div {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--lang-table-border);
+            padding-bottom: 30px;
+        }
+
+        &.info-item {
+            .name {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+            
+            .desc {
+                color: var(--lang-white)!important;
+                line-height: 140%;
+                font-size: var(--body-font-size);
+            }
+
+            .count {
+                color: var(--lang-text-03);
+                margin-right: 8px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span {
+                        &:nth-child(2) {
+                            color: var(--lang-text-03);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.external-wrap {
+    height: 100%;
+
+    .external-list {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(auto, 317.5px)); gap: 1.25rem; padding: 0rem; box-sizing: border-box;
+
+        .external-item {
+            height: 236px; background-color: var(--lang-ui-03); display: flex; flex-direction: column; justify-content: space-between;
+            padding: 1rem; box-sizing: border-box;
+
+            .external-info {
+                // padding: 1.5rem; box-sizing: border-box;
+
+                .title {
+                    display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-bottom: 1rem; font-size: var(--basic-font-size); font-weight: 600;
+                    .status {
+                        display: flex; align-items: center; gap: 8px; color: var(--lang-primary); font-size: var(--body-font-size); font-weight: normal;
+                    }
+                }
+
+                .desc {
+                    color: var(--lang-text-01)!important; line-height: 18px; font-size: var(--body-font-size);
+                }
+            }   
+
+            .btn-wrap {
+                button {
+                    width: 100%; text-align: center;
+                }
+            }
+            
+        }
+    }
+
+    .form {
+        .form-content {
+            .title {display: flex; gap: 0.5rem; align-items: center;}
+        }
+    }
+
+    &.external-detail {
+        padding: 2.25rem; box-sizing: border-box;
+
+        .title {
+            display: flex; align-items: center; gap: .5rem; margin-bottom: 2.5rem; font-size: var(--lang-font-h3); font-weight: 600;
+        }
+    }
+}
+
+@include tablet {
+    .integration-content {
+        .integration-wrap {
+            > .left {
+                width: 12.5rem;
+            }
+
+            > .right {
+                width: calc(100% - 12.5rem);
+                padding: 1.25rem;
+            }
+        }
+    }
+
+    .external-wrap {
+        .external-list {
+            grid-template-columns: repeat(auto-fill, minmax(auto, 244px));
+            .external-item {
+                height: 192px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .integration-content {
+        .integration-wrap {
+            > .left {
+                position: absolute;
+                width: 100%;
+                padding: 0;
+                bottom: 0;
+                left: 0;
+                border-right: none;
+                background-color: var(--lang-ui-02);
+                z-index: 9;
+
+                .filter {
+                    display: none;
+                }
+
+                .refresh {
+                    padding: 0 1rem 1rem;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid var(--lang-ui-01);
+                }
+
+            }
+
+            >.right {
+                width: 100%;
+
+                > .btn-wrap {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .integration-detail {
+                padding: 1.25rem;
+            }
+        }
+
+        .panel-wrap {
+            .integration-setting-info {
+                width: 100%;
+                padding: 1.25rem;
+            }
+        }
+    }
+    .external-wrap {
+        .external-list {
+            grid-template-columns: repeat(1, 1fr);
+            .external-item {
+                height: auto;
+                min-height: 217px;
+            }
+        }
+    }
+}

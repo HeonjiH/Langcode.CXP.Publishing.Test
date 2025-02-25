@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>CXP V2</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 -->
+    <link href="lib/fontawesome-pro-6.1.1-web/css/all.min.css?v=jq97s1DBy3ajfke99Lg5PYCF8cAAIiBz9CGw7sAGzfU" rel="stylesheet">
+
+    <!-- 라이브러리 -->
+    <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebar = document.getElementsByClassName("sidebar")[0];
+            const sidelayer = document.getElementsByClassName("sidebar-layer")[0];
+            const content = document.getElementById("main")
+            const toggleBtn = document.getElementsByClassName("menu")[0];
+
+            toggleBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                content.classList.toggle("expand");
+            });
+
+            const mobileBtn = document.getElementsByClassName("mobile-menu")[0];
+            mobileBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                content.classList.toggle("expand");
+            })
+            sidelayer.addEventListener("click", function() {
+                sidebar.classList.remove("expand");
+                content.classList.remove("expand");
+            })
+        });
+    </script>
+    <script>
+        function toggleTheme() {
+            const main = document.getElementById('main');
+            main.classList.toggle('white-theme');
+        }
+    </script>
+    <script>
+        function openSearch() {
+            const searchBtn = document.getElementsByClassName('search-btn')[0];
+            const search = document.getElementsByClassName('search')[0];
+            search.classList.add('active');
+        }
+
+        function closeSearch() {
+            const closeBtn = document.getElementsByClassName('clear')[0];
+            const search = document.getElementsByClassName('search')[0];
+            search.classList.remove('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            <header id="header">
+                <div class="header-wrap">
+                    <div class="left">
+                        <button class="btn-transparent btn btn-lg mobile-menu" onclick="mobileMenu()">
+                            <i class="far fa-bars"></i>
+                        </button>
+                        <h1 class="logo" onclick="location.href='index.html'">CXP V2</h1>
+                    </div>
+                    <div class="right">
+                        <div class="search">
+                            <button class="search-btn" onclick="openSearch()">
+                                <i class="far fa-search"></i>
+                            </button>
+                            <div class="search-box">
+                                <div class="input-item input-search borderless">
+                                    <div><i class="far fa-magnifying-glass"></i></div>
+                                    <input type="text" class="input-md" placeholder="Search">
+                                    <button class="btn clear" onclick="closeSearch()"><i class="far fa-xmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-menu">
+                            <ul>
+                                <li>
+                                    <button>
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onclick="location.href='notification.html'">
+                                        <i class="fa-light fa-bell"></i>
+                                    </button>
+                                </li>
+                                <li onclick="location.href='report.html'">
+                                    <button>
+                                        <i class="fa-light fa-triangle-exclamation"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="profile">
+                                <button>
+                                    <img src="./images/user_img.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="content-wrap">
+                <div class="sidebar">
+                    <div class="sidebar-layer"></div>
+                    <div class="sidebar-top">
+                        <h1 class="logo">
+                            CXP V2
+                        </h1>
+                        <div class="profile">
+                            <img src="./images/user_img.png" alt="">
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li class="menu">
+                            <button class="btn btn-lg">
+                                <i class="far fa-bars"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg active" onclick="location.href='index.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M14 1H2a1 1 0 0 0-1 1v12a1.001 1.001 0 0 0 1 1h12a1.001 1.001 0 0 0 1-1V2a1.001 1.001 0 0 0-1-1Zm0 3.5H2V2h12v2.5ZM2 14V5.5h12l.001 8.5H2Z"/><path fill="#fff" d="M13 7H9.5v1h1.795L8.5 10.855l-2.145-2.15a.5.5 0 0 0-.71 0L3 11.355l.705.705L6 9.765l2.145 2.15a.501.501 0 0 0 .71 0L12 8.705V10.5h1V7Z"/></svg>
+                                <p>대시보드</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='chat.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2.42l-1.71 3Z"/></svg>
+                                <p>채팅</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='bot.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
+                                <p>봇 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='knowledge.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M10.5 11.998h-5v1h5v-1ZM9.5 13.998h-3v1h3v-1ZM5.407 9.069A3.593 3.593 0 0 1 4 5.999a4.003 4.003 0 0 1 3-3.87l-.193-.98A5.004 5.004 0 0 0 3 5.998a4.59 4.59 0 0 0 1.73 3.808c.506.467.77.732.77 1.191h1c0-.92-.555-1.433-1.093-1.93ZM11.525 7.998a4.795 4.795 0 0 1-.936 1.072c-.536.496-1.089 1.009-1.089 1.928h1c0-.46.263-.725.768-1.192.472-.402.872-.881 1.184-1.417l-.927-.39ZM14 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 11 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 8.051 4H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1C9.673 6 9 5.327 9 4.5S9.673 3 10.5 3s1.5.673 1.5 1.5S11.327 6 10.5 6Z"/></svg>
+                                <p>지식베이스 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
+                                <p>프롬프트 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='integration.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8 13.5c-1.8 0-3.55-.9-4.6-2.5H6v-1H2v4h1v-1.85a6.457 6.457 0 0 0 5 2.35v-1ZM15.5 11.5v-1h-1.05c-.05-.3-.2-.6-.35-.9l.75-.75-.7-.7-.75.75c-.25-.15-.55-.3-.9-.35V7.5h-1v1.05c-.3.05-.6.2-.9.35l-.75-.75-.7.7.75.75c-.15.25-.3.55-.35.9H8.5v1h1.05c.05.3.2.6.35.9l-.75.75.7.7.75-.75c.25.15.55.3.9.35v1.05h1v-1.05c.3-.05.6-.2.9-.35l.75.75.7-.7-.75-.75c.15-.25.3-.55.35-.9h1.05Zm-3.5 1c-.85 0-1.5-.65-1.5-1.5s.65-1.5 1.5-1.5 1.5.65 1.5 1.5-.65 1.5-1.5 1.5ZM10 5h2.6C10.95 2.45 7.55 1.75 5 3.4A5.5 5.5 0 0 0 2.5 8h-1c0-3.6 2.9-6.5 6.5-6.5 1.95 0 3.75.85 5 2.35V2h1v4h-4V5Z"/></svg>
+                                <p>외부 연동 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='approval_submit.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M12.5 2.5H11V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v.5H3.5a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1ZM6 2h4v2H6V2Zm6.5 12h-9V3.5H5V5h6V3.5h1.5V14Z"/></svg>
+                                <p>결재함</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_company.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M13.5 8.38v-.765l.96-.84a1 1 0 0 0 .19-1.275l-1.18-2a1 1 0 0 0-1.185-.45l-1.215.41a5.677 5.677 0 0 0-.655-.375l-.255-1.26a1 1 0 0 0-1-.805H6.82a1 1 0 0 0-1 .805l-.255 1.26a5.74 5.74 0 0 0-.66.375l-1.19-.43a1 1 0 0 0-.32-.03 1 1 0 0 0-.865.5l-1.18 2a1 1 0 0 0 .205 1.255l.945.865v.765l-.945.84A1 1 0 0 0 1.35 10.5l1.18 2a1 1 0 0 0 1.185.45l1.215-.41c.21.14.429.264.655.375l.255 1.26a1 1 0 0 0 1 .805H9.2a1 1 0 0 0 1-.805l.255-1.26c.228-.11.448-.236.66-.375l1.21.41a1 1 0 0 0 1.185-.45l1.14-2a1 1 0 0 0-.205-1.255L13.5 8.38ZM12.605 12l-1.715-.58c-.402.34-.86.606-1.355.785L9.18 14H6.82l-.355-1.775a4.68 4.68 0 0 1-1.35-.785l-1.72.56-1.18-2 1.36-1.2a4.45 4.45 0 0 1 0-1.565L2.215 6l1.18-2 1.715.58a4.43 4.43 0 0 1 1.355-.785L6.82 2h2.36l.355 1.775c.49.184.947.45 1.35.785l1.72-.56 1.18 2-1.36 1.2a4.448 4.448 0 0 1 0 1.565L13.785 10l-1.18 2Z"/><path fill="#fff" d="M8 11a3 3 0 1 1 3-3 2.97 2.97 0 0 1-3 3Zm0-5a1.955 1.955 0 0 0-2 2 1.955 1.955 0 0 0 2 2 1.955 1.955 0 0 0 2-2 1.954 1.954 0 0 0-2-2Z"/></svg>
+                                <p>설정</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='monitoring.html'">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 18"><path stroke="#fff" stroke-width="2" d="M0 9.105h4.324L6.486 3l4.325 12 2.594-5.895H16"/></svg>
+                                <p>모니터링</p>
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="bottom-menu">
+                        <li>
+                            <button class="btn btn-md">
+                                <i class="far fa-bookmark"></i>
+                                <p>북마크</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-md" onclick="location.href='notification.html'">
+                                <i class="fa-light fa-bell"></i>
+                                <p>알림</p>
+                            </button> 
+                        </li>
+                        <li>
+                            <button class="btn btn-md" onclick="location.href='report.html'">
+                                <i class="fa-light fa-triangle-exclamation"></i>
+                                <p>신고</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <main id="main" class="nolnb">
+                    <div class="dashboard-container main-container">
+                        <div class="page-title">
+                            <div class="breadcrumb jc-between w100p">
+                                <h3>대시보드</h3>
+                                <button class="btn btn-transparent primary btn-lg btn-icon">
+                                    결과 다운로드
+                                    <i class="fa-light fa-arrow-down-to-line"></i>
+                                </button>
+                            </div>
+                            <div class="mobile mobile-title">
+                                <button class="btn-transparent btn btn-lg mobile-menu" onclick="mobileMenu()">
+                                    <i class="far fa-bars"></i>
+                                </button>
+                                <p>대시보드</p> 
+                                <button class="btn-transparent primary btn btn-lg pl0">
+                                    결과 다운로드
+                                    <i class="fa-light fa-arrow-down-to-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="page-content">
+                            <div class="dashboard-item">
+                                <!-- 모바일용 필터 바텀시트 -->
+                                <div class="bottomsheet-container">
+                                    <div class="bottomsheet-layer"></div>
+                                    <div class="bottomsheet">
+                                        <div class="drag-handle"></div>
+                                        <div class="bottomsheet-con filter">
+                                            <div class="flex ai-center jc-between refresh">
+                                                <button class="btn btn-icon btn-transparent pd0">
+                                                    <i class="fa-light fa-arrows-rotate"></i>
+                                                    초기화
+                                                </button>
+                                                <div>
+                                                    <button class="btn btn-transparent">취소</button>
+                                                    <button class="btn btn-transparent primary">완료</button>
+                                                </div>
+                                            </div>
+                                            <div class="filter-content-wrap">
+                                                <div class="filter filter-target">
+                                                    <label>대상</label>
+                                                    <div class="target-wrap">
+                                                        <div class="dropdown-wrap">
+                                                            <div class="dropdown"> 
+                                                                <button class="dropdown-sm dropdown-grey-01">
+                                                                    <span class="dropdown-txt">봇 전체</span>
+                                                                    <span class="dropdown-icon">
+                                                                        <i class="far fa-chevron-down"></i>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="dropdown-list hidden">
+                                                                    <div>
+                                                                        <label for="">그룹A</label>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1" checked>
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">그룹 A</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_2" checked>
+                                                                                    <label for="filter_2" class="label-cb"></label>
+                                                                                    <label for="filter_2">봇 A-1</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_3" checked>
+                                                                                    <label for="filter_3" class="label-cb"></label>
+                                                                                    <label for="filter_3">봇 A-2</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1">
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">봇 A-3</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label for="">그룹B</label>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1" checked>
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">그룹 A</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_2" checked>
+                                                                                    <label for="filter_2" class="label-cb"></label>
+                                                                                    <label for="filter_2">봇 A-1</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_3" checked>
+                                                                                    <label for="filter_3" class="label-cb"></label>
+                                                                                    <label for="filter_3">봇 A-2</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label for="">그룹C</label>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1" checked>
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">그룹 A</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_2" checked>
+                                                                                    <label for="filter_2" class="label-cb"></label>
+                                                                                    <label for="filter_2">봇 A-1</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_3" checked>
+                                                                                    <label for="filter_3" class="label-cb"></label>
+                                                                                    <label for="filter_3">봇 A-2</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1">
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">봇 A-3</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1">
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">봇 A-3</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label for="">그룹D</label>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1" checked>
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">그룹 A</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_2" checked>
+                                                                                    <label for="filter_2" class="label-cb"></label>
+                                                                                    <label for="filter_2">봇 A-1</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_3" checked>
+                                                                                    <label for="filter_3" class="label-cb"></label>
+                                                                                    <label for="filter_3">봇 A-2</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="input-item chk-item">
+                                                                                    <input type="checkbox" id="filter_1">
+                                                                                    <label for="filter_1" class="label-cb"></label>
+                                                                                    <label for="filter_1">봇 A-3</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="dropdown-list hidden">
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 1</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 2</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 3</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 4</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 5</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 6</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 7</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 8</span></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-wrap">
+                                                            <div class="dropdown"> 
+                                                                <button class="dropdown-sm dropdown-grey-01">
+                                                                    <span class="dropdown-txt">채널 전체</span>
+                                                                    <span class="dropdown-icon">
+                                                                        <i class="far fa-chevron-down"></i>
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-list hidden">
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 1</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 2</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 3</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 4</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 5</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 6</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 7</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 8</span></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-wrap">
+                                                            <div class="dropdown"> 
+                                                                <button class="dropdown-sm dropdown-grey-01">
+                                                                    <span class="dropdown-txt">입력 수단 전체</span>
+                                                                    <span class="dropdown-icon">
+                                                                        <i class="far fa-chevron-down"></i>
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-list hidden">
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 1</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 2</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 3</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 4</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 5</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 6</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 7</span></button>
+                                                                    </li>
+                                                                    <li class="dropdown-list-item">
+                                                                        <button><span>봇 8</span></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter filter-duration">
+                                                    <label for="">기간</label>
+                                                    <div class="datepicker">
+                                                        <div class="input-item input-date">
+                                                            <input type="date" class="input-default-02 input-sm">
+                                                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" data-date-picker-icon="true" class="" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"></path></svg>
+                                                        </div>
+                                                        <span>-</span>
+                                                        <div class="input-item input-date">
+                                                            <input type="date" class="input-default-02 input-sm">
+                                                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" data-date-picker-icon="true" class="" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="duration">
+                                                        <button class="btn btn-sm btn-default btn-ui-04 active">오늘</button>
+                                                        <button class="btn btn-sm btn-ui-04">일주일</button>
+                                                        <button class="btn btn-sm btn-ui-04">한달</button>
+                                                        <button class="btn btn-sm btn-ui-04">일년</button>
+                                                    </div>
+                                                </div>
+                                                <div class="filter">
+                                                    <label for="">비교 방법</label>
+                                                    <div class="radio-wrap flex ai-center">
+                                                        <div class="input-item radio-item">
+                                                            <input type="radio" id="method_1" name="method" checked>
+                                                            <label for="method_1" name="method">누적</label>
+                                                        </div>
+    
+                                                        <div class="input-item radio-item">
+                                                            <input type="radio" id="method_2" name="method" >
+                                                            <label for="method_2" name="method">평균</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter">
+                                                    <label for="">그래프 기준</label>
+                                                    <div class="radio-wrap flex ai-center">
+                                                        <div class="input-item radio-item">
+                                                            <input type="radio" id="graph_1" name="graph" checked>
+                                                            <label for="graph_1" name="graph">날짜</label>
+                                                        </div>
+    
+                                                        <div class="input-item radio-item">
+                                                            <input type="radio" id="graph_2" name="graph" >
+                                                            <label for="graph_2" name="graph">항목</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="filter-wrap accor-wrap shadow">
+                                    <div class="filter-title accor-title">
+                                        <div class="left">
+                                            <span><i class="far fa-filter"></i> 필터</span>
+                                            <span class="desc">(봇 A / 2000-00-00 / 누적 / 날짜 기준)</span>
+                                            <span>검색결과</span>
+                                        </div>
+                                        <div class="right ai-center">
+                                            <span>검색 필터 설정</span>
+                                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="#FFF" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z" fill="#FFF"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="filter-content accor-content">
+                                        <div class="filter-content-wrap accor-content-wrap">
+                                            <div class="filter filter-target">
+                                                <label>대상</label>
+                                                <div class="target-wrap">
+                                                    <div class="dropdown-wrap">
+                                                        <div class="dropdown"> 
+                                                            <button class="dropdown-sm dropdown-grey-01">
+                                                                <span class="dropdown-txt">봇 전체</span>
+                                                                <span class="dropdown-icon">
+                                                                    <i class="far fa-chevron-down"></i>
+                                                                </span>
+                                                            </button>
+                                                            <div class="dropdown-list hidden">
+                                                                <div>
+                                                                    <label for="">그룹A</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1" checked>
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">그룹 A</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_2" checked>
+                                                                                <label for="filter_2" class="label-cb"></label>
+                                                                                <label for="filter_2">봇 A-1</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_3" checked>
+                                                                                <label for="filter_3" class="label-cb"></label>
+                                                                                <label for="filter_3">봇 A-2</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1">
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">봇 A-3</label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div>
+                                                                    <label for="">그룹B</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1" checked>
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">그룹 A</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_2" checked>
+                                                                                <label for="filter_2" class="label-cb"></label>
+                                                                                <label for="filter_2">봇 A-1</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_3" checked>
+                                                                                <label for="filter_3" class="label-cb"></label>
+                                                                                <label for="filter_3">봇 A-2</label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div>
+                                                                    <label for="">그룹C</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1" checked>
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">그룹 A</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_2" checked>
+                                                                                <label for="filter_2" class="label-cb"></label>
+                                                                                <label for="filter_2">봇 A-1</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_3" checked>
+                                                                                <label for="filter_3" class="label-cb"></label>
+                                                                                <label for="filter_3">봇 A-2</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1">
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">봇 A-3</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1">
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">봇 A-3</label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div>
+                                                                    <label for="">그룹D</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1" checked>
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">그룹 A</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_2" checked>
+                                                                                <label for="filter_2" class="label-cb"></label>
+                                                                                <label for="filter_2">봇 A-1</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_3" checked>
+                                                                                <label for="filter_3" class="label-cb"></label>
+                                                                                <label for="filter_3">봇 A-2</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="input-item chk-item">
+                                                                                <input type="checkbox" id="filter_1">
+                                                                                <label for="filter_1" class="label-cb"></label>
+                                                                                <label for="filter_1">봇 A-3</label>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="dropdown-list hidden">
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 1</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 2</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 3</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 4</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 5</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 6</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 7</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 8</span></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-wrap">
+                                                        <div class="dropdown"> 
+                                                            <button class="dropdown-sm dropdown-grey-01">
+                                                                <span class="dropdown-txt">채널 전체</span>
+                                                                <span class="dropdown-icon">
+                                                                    <i class="far fa-chevron-down"></i>
+                                                                </span>
+                                                            </button>
+                                                            <ul class="dropdown-list hidden">
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 1</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 2</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 3</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 4</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 5</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 6</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 7</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 8</span></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-wrap">
+                                                        <div class="dropdown"> 
+                                                            <button class="dropdown-sm dropdown-grey-01">
+                                                                <span class="dropdown-txt">입력 수단 전체</span>
+                                                                <span class="dropdown-icon">
+                                                                    <i class="far fa-chevron-down"></i>
+                                                                </span>
+                                                            </button>
+                                                            <ul class="dropdown-list hidden">
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 1</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 2</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 3</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 4</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 5</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 6</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 7</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>봇 8</span></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter filter-duration">
+                                                <label for="">기간</label>
+                                                <div class="datepicker">
+                                                    <div class="input-item input-date">
+                                                        <input type="date" class="input-default-02 input-sm">
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" data-date-picker-icon="true" class="" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"></path></svg>
+                                                    </div>
+                                                    <span>-</span>
+                                                    <div class="input-item input-date">
+                                                        <input type="date" class="input-default-02 input-sm">
+                                                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" data-date-picker-icon="true" class="" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"></path></svg>
+                                                    </div>
+                                                </div>
+                                                <div class="duration">
+                                                    <button class="btn btn-sm btn-default btn-ui-04 active">오늘</button>
+                                                    <button class="btn btn-sm btn-ui-04">일주일</button>
+                                                    <button class="btn btn-sm btn-ui-04">한달</button>
+                                                    <button class="btn btn-sm btn-ui-04">일년</button>
+                                                </div>
+                                            </div>
+                                            <div class="filter">
+                                                <label for="">비교 방법</label>
+                                                <div class="radio-wrap flex ai-center">
+                                                    <div class="input-item radio-item">
+                                                        <input type="radio" id="method_1" name="method" checked>
+                                                        <label for="method_1" name="method">누적</label>
+                                                    </div>
+
+                                                    <div class="input-item radio-item">
+                                                        <input type="radio" id="method_2" name="method" >
+                                                        <label for="method_2" name="method">평균</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter">
+                                                <label for="">그래프 기준</label>
+                                                <div class="radio-wrap flex ai-center">
+                                                    <div class="input-item radio-item">
+                                                        <input type="radio" id="graph_1" name="graph" checked>
+                                                        <label for="graph_1" name="graph">날짜</label>
+                                                    </div>
+
+                                                    <div class="input-item radio-item">
+                                                        <input type="radio" id="graph_2" name="graph" >
+                                                        <label for="graph_2" name="graph">항목</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter-btn-wrap">
+                                            <button class="btn btn-icon btn-transparent">
+                                                <i class="fa-light fa-arrows-rotate"></i>
+                                                초기화
+                                            </button>
+                                            <div class="btn-wrap">
+                                                <button class="btn btn-transparent">취소</button>
+                                                <button class="btn btn-transparent primary">검색</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-item shadow">
+                                <div class="summary-wrap">
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">총 질의응답 수</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">176</span>
+                                            <span class="percent">
+                                                100%
+                                                <span>
+                                                    <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#f00" width="14" height="14"><polygon points="10 6 10 8 22.59 8 6 24.59 7.41 26 24 9.41 24 22 26 22 26 6 10 6"></polygon>
+                                                        <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" width="14" height="14" fill="none"></rect></svg>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">총 사용자 수</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">7</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">AI 답변 당 평균 토큰 수</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">376</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">Feedback 제공율</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">47.93 %</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">평균 질의응답 수</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">44</span>
+                                            <span class="percent">
+                                                100%
+                                                <span>
+                                                    <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#f00" width="14" height="14"><polygon points="10 6 10 8 22.59 8 6 24.59 7.41 26 24 9.41 24 22 26 22 26 6 10 6"></polygon>
+                                                        <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" width="14" height="14" fill="none"></rect></svg>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">활성 사용자 수</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">4</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">AI 답변 제공율</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">87 %</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">Feedback 인사이트</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">27/4/8</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">토큰 사용 비용</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">₩ 72.23</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-item">
+                                        <p class="summary-title">
+                                            <span class="title-txt">누적된 토큰</span>
+                                            <span class="summary-info">
+                                                <button class="btn-info">
+                                                    <i class="fa-light fa-circle-info"></i>
+                                                    <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                </button>
+                                            </span>
+                                        </p>
+                                        <div class="summary-numeric">
+                                            <span class="now">28992</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-item">
+                                <div class="chart-wrap">
+                                    <div class="chart-item">
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">총 질의응답 수</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">Feedback 인사이트</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-item">
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">사용자 그래프</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">AI 답변 제공률</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-item full">
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">AI 답변 평균 토큰 그래프</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-item">
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">토큰 사용량</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                        <div class="chart-box shadow">
+                                            <p class="chart-title">
+                                                <span class="title-txt">임계치 대비 토큰 사용량</span>
+                                                <span class="chart-info">
+                                                    <button class="btn-info">
+                                                        <i class="fa-light fa-circle-info"></i>
+                                                        <span class="tooltip">조회 기간 중 AI의 총 질의응답 수를 나타냅니다.</span>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                            <div class="chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 필터 아코디언 기능
+    document.querySelectorAll(".accor-title").forEach(title => {
+        title.addEventListener("click", () => {
+            // 모바일 화면 (480px 이하)일 때
+            if (window.innerWidth <= 480) {
+                document.getElementById("dashboardFilter").classList.add("active");
+                return;
+            }
+            
+            // 데스크탑 화면일 때 아코디언 동작
+            title.classList.toggle("active");
+            const accorCon = title.nextElementSibling;
+            if (accorCon.classList.contains("open")) {
+                accorCon.style.height = '0px';
+                accorCon.classList.remove("open");
+            } else {
+                accorCon.style.height = `${accorCon.scrollHeight}px`;
+                accorCon.classList.add("open");
+            }
+        });
+    });
+
+    // 데스크탑 화면일 때 열려있는 아코디언의 높이를 재계산
+    const recalculateHeights = () => {
+        if (window.innerWidth <= 480) return;
+        
+        document.querySelectorAll(".accor-content.open").forEach(content => {
+            content.style.height = 'auto';  
+            const scrollHeight = content.scrollHeight;  
+            content.style.height = `${scrollHeight}px`;
+        });
+    };
+
+    // 창 크기가 변경되면, 모바일 사이즈라면 열린 아코디언 닫기, 데스크탑이라면 높이 재계산
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 480) {
+            document.querySelectorAll(".accor-content.open").forEach(content => {
+                content.style.height = '0px';
+                content.classList.remove("open");
+            });
+        } else {
+            recalculateHeights();
+        }
+    });
+</script>
+
+<script>
+    // 툴팁
+    document.addEventListener("click", (event) => {
+        const btn = event.target.closest(".btn-info");
+
+        if (btn) {
+            const tooltip = btn.querySelector(".tooltip");
+            const isActive = tooltip.classList.contains("active");
+
+            document.querySelectorAll(".tooltip").forEach(tip => tip.classList.remove("active"));
+
+            if (!isActive) {
+                tooltip.classList.add("active");
+            }
+        } else {
+            document.querySelectorAll(".tooltip").forEach(tip => tip.classList.remove("active"));
+        }
+    });
+</script>
+<script>
+    // 드롭다운
+    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => {
+        const optionMenu = dropdownWrap.querySelector(".dropdown");
+        const selectBtn = optionMenu.querySelector("button");
+        const optionList = optionMenu.querySelector(".dropdown-list");
+        const options = optionMenu.querySelectorAll(".dropdown-list-item");
+        const sBtn_text = optionMenu.querySelector(".dropdown-txt");
+
+        selectBtn.addEventListener("click", () => {
+            optionMenu.classList.toggle("active");
+            optionList.classList.toggle("hidden");
+        });
+
+        options.forEach((option) => {
+            option.addEventListener("click", () => {
+                const selectedOption = option.querySelector("span").innerText;
+                sBtn_text.innerText = selectedOption;
+
+                optionList.classList.add("hidden");
+                optionMenu.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropdownWrap.contains(event.target)) {
+                optionMenu.classList.remove("active");
+                optionList.classList.add("hidden");
+            }
+        });
+    });
+</sc>
+</html>
