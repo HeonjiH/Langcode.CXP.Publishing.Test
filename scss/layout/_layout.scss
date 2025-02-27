@@ -213,7 +213,7 @@
         #main {
             width: calc(100% - 14.05rem); height: 100%; overflow-y: auto;
 
-            &.expand, &.noti, &.expand.noti {width: calc(100% - 17.8rem);}
+            &.expand, &.noti, &.expand.noti {width: calc(100% - 14.05rem);}
             &.expand.nolnb, &.nolnb {width: 100%;}
             
             .main-container {
@@ -264,8 +264,19 @@
         &.panel-active {width: 100%!important;}
     }
 
+    // pc 컨텍스트 메뉴 모바일에서 안보이게 임시로 설정
     .title-menu {
         position: absolute;
         right: 0;
+        
+        .list-menu {
+            display: none!important;
+        }
+    }
+
+    .btn-wrap {
+        .list-menu {
+            display: none!important;
+        }
     }
 }

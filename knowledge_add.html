@@ -380,25 +380,105 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 멤버 초대 모달 -->
+                    <!-- 사용자 초대하기 모달 -->
                     <div class="modal-container" style="display: none;" id="modal2">
                         <div class="modal-wrap">
                             <div class="modal-content">
-                                <div class="modal-content-header pr0">
-                                    <p class="modal-title">참여 사용자 설정</p>
-                                    <button class="btn btn-transparent btn-sm" onclick="closeModal(this)">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
+                                <div class="modal-content-header">
+                                    <p class="modal-title">초대하기</p>
+                                    <div class="flex ai-center">
+                                        <div class="dropdown-wrap">
+                                            <div class="dropdown">
+                                                <button class="dropdown-md dropdown-primary">
+                                                    <span class="dropdown-txt primary">직접 입력</span>
+                                                    <span class="dropdown-icon">
+                                                        <i class="far fa-chevron-down"></i>
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-list hidden">
+                                                    <li class="dropdown-list-item">
+                                                        <button><span>직접 입력</span></button>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <button><span>엑셀 일괄 추가</span></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="btn-transparent btn-sm" onclick="closeModal(this)">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="modal-content-body">
                                     <div class="member-auth auth-list pd0">
-                                        <div class="input-item input-item-btn input-auth">
-                                            <div>
-                                                <div><i class="far fa-magnifying-glass"></i></div>
-                                                <input type="text" class="input-md input-default borderless" placeholder="초대할 사용자 검색">
-                                                <button class="btn btn-primary btn-md">추가</button>
+                                        <div>
+                                            <div class="input-item input-item-btn input-auth">
+                                                <div>
+                                                    <div><i class="far fa-magnifying-glass"></i></div>
+                                                    <input type="text" class="input-md input-default borderless" placeholder="초대할 멤버 검색">
+                                                    <button class="btn btn-primary btn-md">추가</button>
+                                                </div>
                                             </div>
+                                            <div class="tags">
+                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
+                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
+                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
+                                            </div>    
                                         </div>
+                                        <ul>
+                                            <strong>검색된 사용자</strong>
+                                            <li>
+                                                <div class="left">
+                                                    <div class="avatar avatar-lg"></div>
+                                                    <div class="list-info">
+                                                        <div>
+                                                            <span class="name">[부서] 홍길동 직급</span>
+                                                        </div>
+                                                        <span class="email">abcde@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="input-item chk-item">
+                                                        <input type="checkbox" id="chk1" checked>
+                                                        <label for="chk1" class="label-cb"></label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <div class="avatar avatar-lg"></div>
+                                                    <div class="list-info">
+                                                        <div>
+                                                            <span class="name">[부서] 홍길동 직급</span>
+                                                        </div>
+                                                        <span class="email">abcde@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="input-item chk-item">
+                                                        <input type="checkbox" id="chk1" checked>
+                                                        <label for="chk1" class="label-cb"></label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="default-list group-list">
+                                            <strong>검색된 역할 그룹</strong>
+                                            <ul>
+                                                <li>
+                                                    <div>
+                                                        <p>[역할 그룹 이름]</p>
+                                                        <span class="desc">역할 그룹에 대한 설명</span>
+                                                    </div>
+                                                    <button class="btn btn-transparent pr0">
+                                                        <i class="far fa-chevron-down"></i>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="member-auth auth-list pd0" style="display: none;">
                                         <strong>선택한 사용자</strong>
                                         <ul>
                                             <li>
@@ -411,25 +491,28 @@
                                                         <span class="email">abcde@gmail.com</span>
                                                     </div>
                                                 </div>
-                                                <div class="right">
+                                                <div class="right flex">
                                                     <div class="dropdown-wrap">
                                                         <div class="dropdown">
                                                             <button class="dropdown-md dropdown-transparent">
-                                                                <span class="dropdown-txt">지식베이스 관리자</span>
+                                                                <span class="dropdown-txt">운영자</span>
                                                                 <span class="dropdown-icon">
                                                                     <i class="fa-sharp fa-solid fa-caret-down"></i>
                                                                 </span>
                                                             </button>
                                                             <ul class="dropdown-list hidden">
                                                                 <li class="dropdown-list-item">
-                                                                    <button><span>지식베이스 관리자</span></button>
+                                                                    <button><span>운영자</span></button>
                                                                 </li>
                                                                 <li class="dropdown-list-item">
-                                                                    <button><span>지식베이스 매니저</span></button>
+                                                                    <button><span>사용자</span></button>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    <button class="btn btn-transparent pr0 icon-only">
+                                                        <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                    </button>
                                                 </div>
                                             </li>
                                             <li>
@@ -442,25 +525,137 @@
                                                         <span class="email">abcde@gmail.com</span>
                                                     </div>
                                                 </div>
-                                                <div class="right">
+                                                <div class="right flex">
                                                     <div class="dropdown-wrap">
                                                         <div class="dropdown">
                                                             <button class="dropdown-md dropdown-transparent">
-                                                                <span class="dropdown-txt">지식베이스 매니저</span>
+                                                                <span class="dropdown-txt">운영자</span>
                                                                 <span class="dropdown-icon">
                                                                     <i class="fa-sharp fa-solid fa-caret-down"></i>
                                                                 </span>
                                                             </button>
                                                             <ul class="dropdown-list hidden">
                                                                 <li class="dropdown-list-item">
-                                                                    <button><span>지식베이스 관리자</span></button>
+                                                                    <button><span>운영자</span></button>
                                                                 </li>
                                                                 <li class="dropdown-list-item">
-                                                                    <button><span>지식베이스 매니저</span></button>
+                                                                    <button><span>사용자</span></button>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    <button class="btn btn-transparent pr0 icon-only">
+                                                        <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal-content-body" style="display: none;">
+                                    <div class="form">
+                                        <div class="form-content">
+                                            <div class="form-input vertical">
+                                                <label for="">엑셀 다운로드</label>
+                                                <span class="desc">
+                                                    사용자 사전을 엑셀 파일 업로드로 일괄 설정할 수 있습니다. <br>
+                                                    아래 엑셀 파일을 다운받아 양식을 참고해 작성하시길 바랍니다. <br>
+                                                    <a href="" class="link-more primary">일괄 추가 양식 다운받기</a>
+                                                </span>
+                                            </div>
+                                            <div class="form-input vertical">
+                                                <label for="">엑셀 업로드</label>
+                                                <div class="input-item input-file">
+                                                    <button class="btn btn-lg btn-primary btn-icon">
+                                                        파일 업로드 하기
+                                                        <i class="fa-light fa-file-plus"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="default-list button-list">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="flex ai-center">
+                                                                <i class="fa-light fa-file"></i>
+                                                                <span style="margin-left: 10px;">사용자.xlsx</span>
+                                                            </div>
+                                                            <button class="btn btn-transparent pr0">
+                                                                <i class="far fa-xmark"></i>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="member-auth auth-list pd0" style="display: none;">
+                                        <strong>선택한 사용자</strong>
+                                        <ul>
+                                            <li>
+                                                <div class="left">
+                                                    <div class="avatar avatar-lg"></div>
+                                                    <div class="list-info">
+                                                        <div>
+                                                            <span class="name">[부서] 홍길동 직급</span>
+                                                        </div>
+                                                        <span class="email">abcde@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="right flex">
+                                                    <div class="dropdown-wrap">
+                                                        <div class="dropdown">
+                                                            <button class="dropdown-md dropdown-transparent">
+                                                                <span class="dropdown-txt">운영자</span>
+                                                                <span class="dropdown-icon">
+                                                                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                                                                </span>
+                                                            </button>
+                                                            <ul class="dropdown-list hidden">
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>운영자</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>사용자</span></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-transparent pr0 icon-only">
+                                                        <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <div class="avatar avatar-lg"></div>
+                                                    <div class="list-info">
+                                                        <div>
+                                                            <span class="name">[부서] 홍길동 직급</span>
+                                                        </div>
+                                                        <span class="email">abcde@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="right flex">
+                                                    <div class="dropdown-wrap">
+                                                        <div class="dropdown">
+                                                            <button class="dropdown-md dropdown-transparent">
+                                                                <span class="dropdown-txt">운영자</span>
+                                                                <span class="dropdown-icon">
+                                                                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                                                                </span>
+                                                            </button>
+                                                            <ul class="dropdown-list hidden">
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>운영자</span></button>
+                                                                </li>
+                                                                <li class="dropdown-list-item">
+                                                                    <button><span>사용자</span></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-transparent pr0 icon-only">
+                                                        <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                    </button>
                                                 </div>
                                             </li>
                                         </ul>
@@ -468,8 +663,8 @@
                                 </div>
                             </div>
                             <div class="modal-btn-wrap">
-                                <button class="btn btn-default btn-lg" onclick="closeModal(this)">취소</button>
-                                <button class="btn btn-primary btn-lg">초대하기</button>
+                                <button class="btn btn-default btn-lg">취소</button>
+                                <button class="btn btn-primary btn-lg">다음</button>
                             </div>
                         </div>
                     </div>

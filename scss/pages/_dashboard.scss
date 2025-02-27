@@ -317,6 +317,94 @@
                         }
                     }
                 }
+
+                .bottomsheet-container {
+                    .filter-content-wrap {
+                        max-height: 85vh;
+                        overflow-y: auto;
+                        padding: 1rem;
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.25rem;
+
+                        .filter {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            > label {
+                                font-weight: 600;
+                            }
+
+                            &.filter-target {
+                                .target-wrap {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 10px;
+
+                                    .dropdown-wrap {
+                                        .dropdown {
+                                            width: 100%;
+
+                                            > button {
+                                                background-color: var(--lang-ui-03);
+                                                border: 1px solid var(--lang-ui-04);
+                                            }
+                                        }
+        
+                                        .dropdown-list {
+                                            position: relative;
+                                            display: flex;
+                                            max-height: none;
+                                            flex-direction: column;
+                                            background-color: var(--lang-ui-03);
+        
+                                            > div {
+                                                padding: 1rem;
+                                                box-sizing: border-box;
+                                                
+                                                &:not(:last-child) {
+                                                    border-bottom: 1px solid var(--lang-ui-01);
+                                                }
+        
+                                                > label {
+                                                    display: block;
+                                                    font-size: 12px;
+                                                    color: var(--lang-text-03);
+                                                    margin-bottom: 20px;
+                                                }
+        
+                                                ul {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    gap: 20px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .datepicker {
+                                justify-content: space-between;
+                                gap: 5px;
+                                
+                                > div {
+                                    width: 100%;
+                                }
+                            }
+
+                            .duration {
+                                flex-wrap: nowrap;
+
+                                > button {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }   
+                }
             }
         }
     }

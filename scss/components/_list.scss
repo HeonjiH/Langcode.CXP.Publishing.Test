@@ -30,6 +30,22 @@
             }
         }
     }
+
+    &.group-list {
+        > ul {
+            li {
+                display: flex;
+                justify-content: space-between;
+                height: 54px;
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+            }
+        }
+    }
 }
 
 .expand-list {

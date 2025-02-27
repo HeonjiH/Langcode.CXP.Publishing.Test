@@ -51,6 +51,84 @@
     5. 설정 - 사용자 관리 (일반 사용자, 관리자)
     6. 결재함 
     -->
+    <!-- 필터 바텀시트 -->
+    <div class="bottomsheet-container">
+        <div class="bottomsheet-layer"></div>
+        <div class="bottomsheet">
+            <div class="drag-handle"></div>
+            <div class="bottomsheet-con filter">
+                <div class="flex ai-center jc-between refresh">
+                    <button class="btn btn-icon btn-transparent pd0">
+                        <i class="fa-light fa-arrows-rotate"></i>
+                        초기화
+                    </button>
+                    <span class="btn btn-icon jc-between primary">
+                        적용하기
+                        <i class="fa-light fa-check"></i>
+                    </span>
+                </div>
+                <div class="bottomsheet-list">
+                    <p class="menu-title">항목</p>
+                    <ul>
+                        <li>
+                            <label for="">봇</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">지식베이스</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox" checked>
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">지식데이터</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">프롬프트</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomsheet-list">
+                    <p class="menu-title">결과</p>
+                    <ul>
+                        <li>
+                            <label for="">승인</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">반려</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">대기</label>
+                            <div class="input-item chk-item">
+                                <input type="checkbox">
+                                <label for="" class="label-cb"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>
     <div class="table-wrap">
         <div class="table-select pr0">
             <div><span>2 선택</span></div>

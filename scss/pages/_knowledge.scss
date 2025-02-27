@@ -86,6 +86,16 @@
                     max-height: 0;
                     height: auto;
                     padding: 0;
+
+                    div:has(iframe) {
+                        padding: 1rem;
+                        box-sizing: border-box;
+                    }
+
+                    .table-wrap {
+                        padding: 1rem;
+                        box-sizing: border-box;
+                    }
                 }
             }
         }

@@ -247,117 +247,319 @@
                     </div>
                 </div>
                 <main id="main" class="">
-                    <!-- 지식데이터 업로드 모달 -->
-                    <div class="modal-container" style="display: none;">
+                    <!-- 파일 상세 모달 -->
+                    <div class="modal-container" style="display: none;" id="modal1">
+                        <div class="modal-wrap w100p">
+                            <div class="modal-content">
+                                <div class="modal-content-body pd0">
+                                    <div class="box-wrap sticky-box">
+                                        <div class="box-title small pr0">
+                                            <div>
+                                                <span class="tag tag-default-02 tag-md">V3.2</span>
+                                                <span>파일명</span>
+                                            </div>
+                                            <div class="view-size">
+                                                <button class="btn btn-transparent">-</button>
+                                                <input type="text" class="input-default-02 input-sm borderless" value="100%">
+                                                <button class="btn btn-transparent">+</button>
+                                            </div>
+                                            <div class="btn-wrap flex ai-center mg0">
+                                                <button class="btn btn-transparent" onclick="closeModal(this)">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-con" style="text-align: center;">
+                                            <iframe src="" frameborder="0" style="background-color: #ddd; width: 70%; min-height: 1000px;"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-container" style="display: none;" id="modal2">
                         <div class="modal-wrap">
                             <div class="modal-content">
-                                <div class="modal-content-header">
-                                    <p class="modal-title">지식데이터 업로드</p>
-                                    <button class="btn-transparent btn-sm">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </div>
-                                <div class="modal-content-body">
-                                    <div class="form">
-                                        <div class="form-content">
-                                            <div class="form-input vertical">
-                                                <label for="">파일 업로드</label>
-                                                <div class="input-item input-file draganddrop">
-                                                    <div class="drop-zone">
-                                                        <span class="drop-prompt">파일 드래그 또는 클릭해 업로드</span>
-                                                        <input type="file" name="drop_file">
-                                                    </div>
-                                                    <span class="desc">지원하는 확장자 : pdf, xlsx, hwp, txt, xls, json, doc, docx, ppt, pptx, jpg, png, jpeg</span>
-                                                    <ul class="file-label">
-                                                        <li>
-                                                            <div>
-                                                                <i class="fa-light fa-file"></i>
-                                                                <span>파일명.pdf</span>
-                                                            </div>
-                                                            <button class="btn btn-transparent">
-                                                                <i class="fa-solid fa-xmark"></i>
+                                <div class="modal-content-body pd0">
+                                    <div class="box-wrap sticky-box">
+                                        <div class="box-title small pr0">
+                                            <div>
+                                                <span>가중치 설정 정보 확인</span>
+                                            </div>
+                                            <div class="btn-wrap flex ai-center mg0">
+                                                <button class="btn btn-transparent" onclick="closeModal(this)">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-con">
+                                            <div class="table-wrap">
+                                                <div class="table-search">
+                                                    <div class="input-item input-search borderless">
+                                                        <input type="text" class="input-md">
+                                                        <div class="flex ai-center">
+                                                            <button class="btn btn-transparent btn-lg icon-only">
+                                                                <i class="far fa-magnifying-glass"></i>
                                                             </button>
-                                                        </li> 
-                                                    </ul>
+                                                            <!-- 필터링 -->
+                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter1')">
+                                                                <i class="far fa-filter"></i>
+                                                                <div class="context-menu" id="table_filter1">
+                                                                    <div class="drag-handle"></div>
+                                                                    <div class="context-menu-con">
+                                                                        <div>
+                                                                            <p class="menu-title">항목</p>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <label for="">봇</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox" checked>
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">지식베이스</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox" checked>
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">지식데이터</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox">
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">프롬프트</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox">
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p class="menu-title">결과</p>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <label for="">승인</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox">
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">반려</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox">
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">대기</label>
+                                                                                    <div class="input-item chk-item">
+                                                                                        <input type="checkbox">
+                                                                                        <label for="" class="label-cb"></label>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="context-btn-wrap">
+                                                                        <div role="button" class="btn btn-default btn-lg btn-icon">
+                                                                            초기화
+                                                                            <i class="fa-sharp fa-light fa-arrows-rotate"></i>
+                                                                        </div>
+                                                                        <div role="button" class="btn btn-primary btn-lg btn-icon">
+                                                                            적용하기
+                                                                            <i class="fa-light fa-check"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            <!-- 지식베이스 상세_지식데이터 -->
+                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable(table_filter2)">
+                                                                <i class="far fa-gear"></i>
+                                                                <div class="context-menu" id="table_filter2">
+                                                                    <div class="drag-handle"></div>
+                                                                    <div class="context-menu-con">
+                                                                        <div class=""> <!-- pb0 -->
+                                                                            <p class="menu-title">표에 표시하기</p>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <label for="">등록일</label>
+                                                                                    <div role="button" class="btn btn-transparent icon-only">
+                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">등록자</label>
+                                                                                    <div role="button" class="btn btn-transparent icon-only">
+                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">최종 편집자</label>
+                                                                                    <div role="button" class="btn btn-transparent icon-only">
+                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <label for="">최종 업데이트일</label>
+                                                                                    <div role="button" class="btn btn-transparent icon-only">
+                                                                                        <i class="fa-solid fa-eye"></i>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                        <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='knowledge_data_weight.html'">
+                                                            가중치 설정하기
+                                                            <i class="far fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- 데이터 펼치기 -->
+                                                <div id="table" class="table">
+                                                    <table class="w100p">
+                                                        <colgroup>
+                                                            <col width="%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="input-item chk-item">
+                                                                        <input type="checkbox" class="input-transparent">
+                                                                        <label for="" class="label-cb"></label>
+                                                                    </div>
+                                                                </th>
+                                                                <th>사용자 질문</th>
+                                                                <th>페이지</th>
+                                                                <th>키워드</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="input-item chk-item">
+                                                                        <input type="checkbox" class="input-transparent">
+                                                                        <label for="" class="label-cb"></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>봇 관리자 페이지는 어떻게 ..</td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <div class="tags flex ai-center">
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="table-btn">
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                                                        </button>
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="input-item chk-item">
+                                                                        <input type="checkbox" class="input-transparent">
+                                                                        <label for="" class="label-cb"></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>봇 관리자 페이지는 어떻게 ..</td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <div class="tags flex ai-center">
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="table-btn">
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                                                        </button>
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="input-item chk-item">
+                                                                        <input type="checkbox" class="input-transparent">
+                                                                        <label for="" class="label-cb"></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>봇 관리자 페이지는 어떻게 ..</td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <div class="tags flex ai-center">
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                        <span class="tag tag-default-02 tag-md">tag1</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="table-btn">
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M15 13H1v1h14v-1ZM12.7 4.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z"/></svg>
+                                                                        </button>
+                                                                        <button class="btn btn-transparent">
+                                                                            <svg style="width: 16px; height: 16px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M7 6H6v6h1V6ZM10 6H9v6h1V6Z"/><path fill="#fff" d="M2 3v1h1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4h1V3H2Zm2 11V4h8v10H4ZM10 1H6v1h4V1Z"/></svg>
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pagination">
+                                                    <div class="left">
+                                                        <div class="pagination-size">
+                                                            <select name="" id="">
+                                                                <option value="">10개씩 보기</option>
+                                                                <option value="" selected>20개씩 보기</option>
+                                                                <option value="">30개씩 보기</option>
+                                                                <option value="">40개씩 보기</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="pagination-current">
+                                                            <select name="" id="">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                            <span>of</span>
+                                                            <span>1</span>
+                                                            <span>pages</span>
+                                                        </div>
+                                                        <div class="pagination-btn-wrap">
+                                                            <button class="btn btn-transparent btn-pagination">
+                                                                <i class="far fa-arrow-left"></i>
+                                                            </button>
+                                                            <button class="btn btn-transparent btn-pagination">
+                                                                <i class="far fa-arrow-right"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", function () {
-                                            const dropZone = document.querySelector(".drop-zone");
-                                            const inputElement = dropZone.querySelector("input[type='file']");
-                                            const fileLabel = document.querySelector(".file-label");
-
-                                            // 드래그 앤 드롭 기본 이벤트 막기
-                                            dropZone.addEventListener("dragover", function (e) {
-                                                e.preventDefault();
-                                                dropZone.classList.add("dragover");
-                                            });
-
-                                            dropZone.addEventListener("dragleave", function (e) {
-                                                dropZone.classList.remove("dragover");
-                                            });
-
-                                            dropZone.addEventListener("drop", function (e) {
-                                                e.preventDefault();
-                                                dropZone.classList.remove("dragover");
-
-                                                const files = e.dataTransfer.files;
-                                                if (files.length > 0) {
-                                                    inputElement.files = files;
-                                                    handleFiles(files);
-                                                }
-                                            });
-
-                                            dropZone.addEventListener("click", function () {
-                                                inputElement.click();
-                                            });
-
-                                            inputElement.addEventListener("change", function () {
-                                                if (inputElement.files.length > 0) {
-                                                    handleFiles(inputElement.files);
-                                                }
-                                            });
-
-                                            function handleFiles(files) {
-                                                fileLabel.innerHTML = ""; // 기존 파일 목록 초기화
-
-                                                for (let i = 0; i < files.length; i++) {
-                                                    const file = files[i];
-                                                    const listItem = document.createElement("li");
-
-                                                    const fileDiv = document.createElement("div");
-                                                    const fileIcon = document.createElement("i");
-
-                                                    fileIcon.className = "fa-light fa-file";
-                                                    const fileName = document.createElement("span");
-                                                    fileName.textContent = file.name;
-
-                                                    fileDiv.appendChild(fileIcon);
-                                                    fileDiv.appendChild(fileName);
-                                                    listItem.appendChild(fileDiv);
-
-                                                    const removeButton = document.createElement("button");
-                                                    removeButton.className = "btn btn-transparent";
-                                                    removeButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                                                    removeButton.addEventListener("click", function () {
-                                                        listItem.remove();
-                                                        inputElement.value = ""; // 파일 입력 초기화
-                                                    });
-
-                                                    listItem.appendChild(removeButton);
-                                                    fileLabel.appendChild(listItem);
-                                                }
-                                            }
-                                        });
-
-                                    </script>
                                 </div>
-                            </div>
-                            <div class="modal-btn-wrap">
-                                <button class="btn btn-default btn-lg">취소</button>
-                                <button class="btn btn-primary btn-lg">업로드하기</button>
                             </div>
                         </div>
                     </div>
@@ -466,7 +668,9 @@
                                         </div>
                                     </div>
                                     <div class="box-con accor-content" style="text-align: center;">
-                                        <iframe src="" frameborder="0" style="background-color: #ddd; width: 70%; min-height: 1000px;"></iframe>
+                                        <div>
+                                            <iframe src="" frameborder="0" style="background-color: #ddd; width: 70%; min-height: 1000px;"></iframe>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="box-wrap sticky-box accor-wrap">
@@ -604,7 +808,7 @@
                                                             </div>
                                                         </button>
                                                     </div>
-                                                    <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='knowledge_qna_add.html'">
+                                                    <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='knowledge_data_weight.html'">
                                                         가중치 설정하기
                                                         <i class="far fa-plus"></i>
                                                     </button>
@@ -746,8 +950,14 @@
                                     </div>
                                 </div>
                                 <div class="mobile btn-wrap">
-                                    <button class="btn btn-lg btn-ui-03 btn-icon w100p">
+                                    <button class="btn btn-lg btn-ui-03 btn-icon w100p" onclick="openModal('modal1')">
                                         파일 상세보기
+                                        <i class="fa-regular fa-angle-right"></i>
+                                    </button>
+                                </div>
+                                <div class="mobile btn-wrap">
+                                    <button class="btn btn-lg btn-ui-03 btn-icon w100p" onclick="openModal('modal2')">
+                                        가중치 설정 정보 확인
                                         <i class="fa-regular fa-angle-right"></i>
                                     </button>
                                 </div>
