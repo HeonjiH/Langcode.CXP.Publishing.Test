@@ -1,8 +1,9 @@
 @import '../abstracts/mixin';
 
 .setting-content {
-    padding: 1.875rem; box-sizing: border-box;
-
+    padding: 1.875rem; 
+    box-sizing: border-box;
+    overflow-y: auto!important;
 }
 
 /* 역할 권한 설정 */
@@ -30,6 +31,10 @@
         .box-wrap {
             .box-con {
                 padding: 30px;
+
+                .input-item {
+                    width: 100%!important;
+                }
             }
         }
 
@@ -194,6 +199,7 @@
                 width: 12%;
                 font-size: 12px;
                 color: var(--lang-text-03);
+                text-align: left;
             }
 
             button {
@@ -266,7 +272,7 @@
 
 @include tablet {
     .setting-content {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 
     .role-wrap {
@@ -332,14 +338,7 @@
 }
 
 @include mobile {
-    .form {
-        .form-content {
-            .form-box {
-                .title {
-                    &.user-add-title {
-                    }
-                }
-            }
-        }
+    .setting-content {
+        padding: 1.125rem;
     }
 }

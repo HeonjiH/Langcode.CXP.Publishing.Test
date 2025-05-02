@@ -1,7 +1,6 @@
 @import 'abstracts/mixin';
 @import 'abstracts/variables';
 
-@import 'base/animation';
 @import 'base/common';
 @import 'base/reset';
 @import 'base/spacing';
@@ -28,16 +27,15 @@
 @import 'layout/grid';
 @import 'layout/forms';
 
-@import 'themes/theme';
 @import 'themes/white';
 
-@import 'pages/login';
-@import 'pages/dashboard';
-@import 'pages/chat';
-@import 'pages/bot';
-@import 'pages/knowledge';
-@import 'pages/prompt';
-@import 'pages/integration';
-@import 'pages/log';
-@import 'pages/setting';
 @import 'pages/approval';
+@import 'pages/bot';
+@import 'pages/chat';
+@import 'pages/dashboard';
+@import 'pages/integration';
+@import 'pages/knowledge';
+@import 'pages/log';
+@import 'pages/login';
+@import 'pages/prompt';
+@import 'pages/setting';

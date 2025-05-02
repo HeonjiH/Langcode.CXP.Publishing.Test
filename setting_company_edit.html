@@ -123,7 +123,7 @@
                         <li>
                             <button class="btn btn-lg" onclick="location.href='bot.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
-                                <p>봇 관리</p>
+                                <p>에이전트 관리</p>
                             </button>
                         </li>
                         <li>
@@ -133,7 +133,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                            <button class="btn btn-lg" onclick="location.href='prompt.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
                                 <p>프롬프트 관리</p>
                             </button>
@@ -212,7 +212,12 @@
                         </li>
                         <li>
                             <button class="btn btn-lg" onclick="location.href='setting_role.html'">
-                                <p>역할&권한 설정</p>
+                                <p>역할&권한 관리</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg" onclick="location.href='setting_forbidden.html'">
+                                <p>금지어 관리</p>
                             </button>
                         </li>
                         <li>
@@ -243,40 +248,42 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="page-content setting-content" style="overflow-y: auto;">
-                            <div class="form">
-                                <div class="form-content">
-                                    <div class="form-input vertical">
-                                        <label for="">회사 이름</label>
-                                        <div class="input-item shadow">
-                                            <input type="text" class="input-md input-default" placeholder="회사 이름 입력">
+                        <div class="page-content setting-content" >
+                            <div class="section-wrap">
+                                <div class="form">
+                                    <div class="form-content">
+                                        <div class="form-input vertical">
+                                            <label for="">회사 이름</label>
+                                            <div class="input-item shadow">
+                                                <input type="text" class="input-md input-default" placeholder="회사 이름 입력">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-input vertical">
-                                        <label for="">회사 소개</label>
-                                        <div class="input-item input-textarea">
-                                            <textarea cols="50" rows="4" name="" id="" class="input-md textarea-default" placeholder="회사 소개 입력"></textarea>
+                                        <div class="form-input vertical">
+                                            <label for="">회사 소개</label>
+                                            <div class="input-item input-textarea">
+                                                <textarea cols="50" rows="4" name="" id="" class="input-md textarea-default" placeholder="회사 소개 입력"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-input vertical">
-                                        <label for="">회사 로고</label>
-                                        <div class="input-item input-file">
-                                            <div class="file-uploader" style="background-color: var(--lang-ui-03); border-bottom: 1px solid #525252">
-                                                <input id="bot-profile-img" accept="" type="file">
-                                                <label class="file-label" for="bot-profile-img">
-                                                    <div>
-                                                        <img class="hidden" id="bot-image">
-                                                        <i class="far fa-plus show"></i>
-                                                    </div>
-                                                    <label for="" class="desc" style="margin-top: 8px; display: block;">권장 사이즈 : 300*300</label>
-                                                </label>
+                                        <div class="form-input vertical">
+                                            <label for="">회사 로고</label>
+                                            <div class="input-item input-file">
+                                                <div class="file-uploader" style="background-color: var(--lang-ui-03); border-bottom: 1px solid #525252">
+                                                    <input id="bot-profile-img" accept="" type="file">
+                                                    <label class="file-label" for="bot-profile-img">
+                                                        <div>
+                                                            <img class="hidden" id="bot-image">
+                                                            <i class="far fa-plus show"></i>
+                                                        </div>
+                                                        <label for="" class="desc" style="margin-top: 8px; display: block;">권장 사이즈 : 300*300</label>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="btn-wrap form-btn mobile">
-                                    <button class="btn btn-md btn-default">취소</button>
-                                    <button class="btn btn-md btn-primary" onclick="location.href='setting_company.html'">저장하기</button>
+                                    <div class="btn-wrap form-btn mobile">
+                                        <button class="btn btn-md btn-default">취소</button>
+                                        <button class="btn btn-md btn-primary" onclick="location.href='setting_company.html'">저장하기</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

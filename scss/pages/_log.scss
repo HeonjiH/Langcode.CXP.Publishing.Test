@@ -122,7 +122,7 @@
                                 padding: 1rem;
                                 box-sizing: border-box;
                                 font-weight: 600;
-                                font-size: var(--lang-font-basic);
+                                font-size: 0.875rem;
 
                                 &.active {
                                     background-color: var(--lang-primary);
@@ -138,6 +138,7 @@
                     .tracking-tbl {
                         text-align: center;
                         width: 100%;
+                        table-layout: fixed;
     
                         thead, tbody {
                             tr {
@@ -145,6 +146,11 @@
     
                                 th, td {
                                     vertical-align: middle;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                    padding: 0.25rem;
+                                    box-sizing: border-box;
                                 }
     
                                 th:nth-child(2), td:nth-child(2) {

@@ -123,7 +123,7 @@
                         <li>
                             <button class="btn btn-lg" onclick="location.href='bot.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
-                                <p>봇 관리</p>
+                                <p>에이전트 관리</p>
                             </button>
                         </li>
                         <li>
@@ -133,7 +133,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                            <button class="btn btn-lg" onclick="location.href='prompt.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
                                 <p>프롬프트 관리</p>
                             </button>
@@ -191,7 +191,7 @@
                                 <span>모니터링</span>
                             </div>
                         </div>
-                        <div class="page-content setting-content template-content" style="overflow-y: auto;">
+                        <div class="page-content setting-content template-content" >
                             <div class="log-wrap">
                                 <div class="tab-wrap line-tab">
                                     <div class="tab-menu">
@@ -592,7 +592,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <span>주제 아이디</span>
-                                                                    <span>[봇 이름]</span>
+                                                                    <span>[에이전트 이름]</span>
                                                                 </li>
                                                                 <li>
                                                                     <span>액션 타입</span>
@@ -635,34 +635,32 @@
                                                         <div class="tracking-detail section-item">
                                                             <div class="section-title">
                                                                 <h3>Event Tracking</h3>
-                                                                <a href="" class="link-more">
-                                                                    관련 스코프 전체 보기
-                                                                </a>
+                                                                <button class="link-more btn btn-transparent primary pd0">관련 스코프 전체보기</button>
                                                             </div>
                                                             <div class="flex">
                                                                 <div class="tracking-list">
                                                                     <ul>
                                                                         <li>
-                                                                            <span>[봇이름] 생성 스코프</span>
+                                                                            <span>[에이전트이름] 생성 스코프</span>
                                                                             <button class="btn btn-transparent btn-icon pr0">펼쳐보기<i class="far fa-chevron-down"></i></button>
                                                                         </li>
                                                                         <li>
-                                                                            <span>[봇이름] 내용 충돌 스코프 1차</span>
+                                                                            <span>[에이전트이름] 내용 충돌 스코프 1차</span>
                                                                             <button class="btn btn-transparent btn-icon pr0">펼쳐보기<i class="far fa-chevron-down"></i></button>
                                                                         </li>
                                                                         <li class="active">
-                                                                            <span>[봇이름] 내용 충돌 스코프 2차</span>
+                                                                            <span>[에이전트이름] 내용 충돌 스코프 2차</span>
                                                                             <button class="btn btn-transparent btn-icon pr0">펼쳐보기<i class="far fa-chevron-down"></i></button>
                                                                         </li>
                                                                         <li>
-                                                                            <span>[봇이름] 삭제 스코프</span>
+                                                                            <span>[에이전트이름] 삭제 스코프</span>
                                                                             <button class="btn btn-transparent btn-icon pr0">펼쳐보기<i class="far fa-chevron-down"></i></button>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="box-wrap">
                                                                     <div class="box-title">
-                                                                        <h3>[봇 이름] 내용 충돌 스코프3차</h3>
+                                                                        <h3>[에이전트 이름] 내용 충돌 스코프3차</h3>
                                                                     </div>
                                                                     <div class="box-con pd0">
                                                                         <div class="tbl-wrap">
@@ -682,17 +680,17 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>1</td>
-                                                                                        <td>홍길동님이 [봇이름]에 "사과는 노랗다"는 내용 업데이트</td>
+                                                                                        <td>홍길동님이 [에이전트이름]에 "사과는 노랗다"는 내용 업데이트</td>
                                                                                         <td>0000-00-00 00:00:00</td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>2</td>
-                                                                                        <td>[봇이름]에 내용 충돌</td>
+                                                                                        <td>[에이전트이름]에 내용 충돌</td>
                                                                                         <td>0000-00-00 00:00:00</td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>3</td>
-                                                                                        <td>"관리자"가 [봇이름]에 "사과는 빨갛다"는 내용 업데이트</td>
+                                                                                        <td>"관리자"가 [에이전트이름]에 "사과는 빨갛다"는 내용 업데이트</td>
                                                                                         <td>0000-00-00 00:00:00</td>
                                                                                     </tr>
                                                                                 </tbody>

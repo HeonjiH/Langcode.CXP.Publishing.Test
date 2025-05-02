@@ -128,7 +128,7 @@
                         <li>
                             <button class="btn btn-lg" onclick="location.href='bot.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
-                                <p>봇 관리</p>
+                                <p>에이전트 관리</p>
                             </button>
                         </li>
                         <li>
@@ -138,7 +138,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                            <button class="btn btn-lg" onclick="location.href='prompt.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
                                 <p>프롬프트 관리</p>
                             </button>
@@ -293,13 +293,13 @@
                                                     <input type="text" class="input-md input-default-02" placeholder="유사어 입력">
                                                 </div>
                                                 <div class="tags"> 
-                                                    <span class="tag tag-md tag-default-02 tag-delete">유사어 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">입력한 유사어 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">짧은 유사어 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">매우 긴 유사어 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">유사 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">동의어 <i class="far fa-xmark"></i></span>
-                                                    <span class="tag tag-md tag-default-02 tag-delete">단어 <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>유사어</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>입력한 유사어</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>짧은 유사어</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>매우 긴 유사어</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>유사</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>동의어</span> <i class="far fa-xmark"></i></span>
+                                                    <span class="tag tag-md tag-default-02 tag-delete"><span>단어</span> <i class="far fa-xmark"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -313,7 +313,7 @@
                                                 <span class="desc">
                                                     사용자 사전을 엑셀 파일 업로드로 일괄 설정할 수 있습니다. <br>
                                                     아래 엑셀 파일을 다운받아 양식을 참고해 작성하시길 바랍니다. <br>
-                                                    <a href="" class="link-more primary">일괄 추가 양식 다운받기</a>
+                                                    <button class="link-more btn btn-transparent primary pd0">일괄 추가 양식 다운받기</button>
                                                 </span>
                                             </div>
                                             <div class="form-input vertical">
@@ -452,7 +452,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="right">
-                                                    <a href="" class="link-more primary">연동 해제</a>
+                                                    <button class="link-more btn btn-transparent primary pd0">연동 해제</button>
                                                 </div>
                                             </li>
                                             <li>
@@ -466,7 +466,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="right">
-                                                    <a href="" class="link-more primary">연동 해제</a>
+                                                    <button class="link-more btn btn-transparent primary pd0">연동 해제</button>
                                                 </div>
                                             </li>
                                             <li>
@@ -480,7 +480,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="right">
-                                                    <a href="" class="link-more primary">연동 해제</a>
+                                                    <button class="link-more btn btn-transparent primary pd0">연동 해제</button>
                                                 </div>
                                             </li>
                                         </ul>
@@ -534,9 +534,9 @@
                                                 </div>
                                             </div>
                                             <div class="tags">
-                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
-                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
-                                                <span class="tag tag-md tag-default-02 tag-delete">봇 이름 <i class="far fa-xmark"></i></span>
+                                                <span class="tag tag-md tag-default-02 tag-delete"><span>에이전트 이름</span> <i class="far fa-xmark"></i></span>
+                                                <span class="tag tag-md tag-default-02 tag-delete"><span>에이전트 이름</span> <i class="far fa-xmark"></i></span>
+                                                <span class="tag tag-md tag-default-02 tag-delete"><span>에이전트 이름</span> <i class="far fa-xmark"></i></span>
                                             </div>    
                                         </div>
                                         <ul>
@@ -673,7 +673,7 @@
                                                 <span class="desc">
                                                     사용자 사전을 엑셀 파일 업로드로 일괄 설정할 수 있습니다. <br>
                                                     아래 엑셀 파일을 다운받아 양식을 참고해 작성하시길 바랍니다. <br>
-                                                    <a href="" class="link-more primary">일괄 추가 양식 다운받기</a>
+                                                    <button class="link-more btn btn-transparent primary pd0">일괄 추가 양식 다운받기</button>
                                                 </span>
                                             </div>
                                             <div class="form-input vertical">
@@ -795,7 +795,7 @@
                                 <p>[지식베이스 이름]</p>
                             </div>
                         </div>
-                        <div class="page-content knowledge-content" style="overflow-y: auto;">
+                        <div class="page-content knowledge-content" >
                             <!-- 기본 컨텍스트 바텀시트 -->
                             <div class="bottomsheet-container">
                                 <div class="bottomsheet-layer"></div>
@@ -821,7 +821,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="knowledge-detail-wrap">
+                            <div class="knowledge-detail-wrap section-wrap">
                                 <div class="description-box">
                                     <div class="grid row">
                                         <div class="col col-4">
@@ -842,7 +842,7 @@
                                                 <label for="">참여 사용자</label>
                                                 <div>
                                                     <span>00명</span>
-                                                    <a onclick="openModal('modal5')" class="link-more primary">참여 사용자 관리</a>
+                                                    <button onclick="openModal('modal5')" class="link-more btn btn-transparent primary pd0">참여 사용자 관리</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -857,7 +857,7 @@
                                                             <a href="">봇이름2</a>
                                                         )
                                                     </span>
-                                                    <a onclick="openModal('modal4')" class="link-more primary">연동하기</a>
+                                                    <button onclick="openModal('modal4')" class="link-more btn btn-transparent primary pd0">연동하기</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -886,7 +886,7 @@
                                                     <span>홍길동 (abcde@gmail.com)</span>
                                                 </div>
                                             </div>
-                                        </div>2                    
+                                        </div>                
                                         <div class="col col-4">
                                             <div class="prompt-info-item">
                                                 <label for="">최종 수정일</label>
@@ -1004,7 +1004,7 @@
                                                                 </div>
                                                             </button>
                                                             <!-- 지식베이스 상세_지식데이터 -->
-                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable(table_filter2)">
+                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter2')">
                                                                 <i class="far fa-gear"></i>
                                                                 <div class="context-menu" id="table_filter2">
                                                                     <div class="drag-handle"></div>
@@ -1015,19 +1015,19 @@
                                                                                 <li>
                                                                                     <label for="">등록일</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">등록자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">최종 편집자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
@@ -1052,11 +1052,11 @@
                                                 <div id="table" class="table">
                                                     <table class="w100p">
                                                         <colgroup>
-                                                            <col width="2%">
-                                                            <col width="2%">
-                                                            <col width="80%">
-                                                            <col width="14%">
-                                                            <col width="2%">
+                                                            <col width="7%">
+                                                            <col width="8%">
+                                                            <col width="45%">
+                                                            <col width="20%">
+                                                            <col width="20%">
                                                         </colgroup>
                                                         <thead>
                                                             <tr>
@@ -1288,7 +1288,7 @@
                                                                 </div>
                                                             </button>
                                                             <!-- 지식베이스 상세_지식데이터 -->
-                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable(table_filter2)">
+                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter2')">
                                                                 <i class="far fa-gear"></i>
                                                                 <div class="context-menu" id="table_filter2">
                                                                     <div class="drag-handle"></div>
@@ -1299,19 +1299,19 @@
                                                                                 <li>
                                                                                     <label for="">등록일</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">등록자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">최종 편집자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
@@ -1336,11 +1336,14 @@
                                                 <div id="table" class="table">
                                                     <table class="w100p">
                                                         <colgroup>
-                                                            <!-- <col width="2%">
-                                                            <col width="2%">
-                                                            <col width="80%">
-                                                            <col width="14%">
-                                                            <col width="2%"> -->
+                                                            <col width="5%">
+                                                            <col width="10%">
+                                                            <col width="15%">
+                                                            <col width="15%">
+                                                            <col width="15%">
+                                                            <col width="15%">
+                                                            <col width="15%">
+                                                            <col width="10%">
                                                         </colgroup>
                                                         <thead>
                                                             <tr>
@@ -1537,7 +1540,7 @@
                                                                 </div>
                                                             </button>
                                                             <!-- 지식베이스 상세_지식데이터 -->
-                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable(table_filter2)">
+                                                            <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter2')">
                                                                 <i class="far fa-gear"></i>
                                                                 <div class="context-menu" id="table_filter2">
                                                                     <div class="drag-handle"></div>
@@ -1548,19 +1551,19 @@
                                                                                 <li>
                                                                                     <label for="">등록일</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">등록자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <label for="">최종 편집자</label>
                                                                                     <div role="button" class="btn btn-transparent icon-only">
-                                                                                        <i class="fa-light fa-eye-slash"></i>
+                                                                                        <i class="fa-solid fa-eye-slash"></i>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
@@ -1585,7 +1588,13 @@
                                                 <div id="table" class="table">
                                                     <table class="w100p">
                                                         <colgroup>
-                                                            <col width="%">
+                                                            <col width="5%">
+                                                            <col width="12%">
+                                                            <col width="23%">
+                                                            <col width="12%">
+                                                            <col width="20%">
+                                                            <col width="15%">
+                                                            <col width="13%">
                                                         </colgroup>
                                                         <thead>
                                                             <tr>
@@ -1788,33 +1797,57 @@
 </script>
 <script>
     // 드롭다운
-    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => {
-        const optionMenu = dropdownWrap.querySelector(".dropdown");
-        const selectBtn = optionMenu.querySelector("button");
-        const optionList = optionMenu.querySelector(".dropdown-list");
-        const options = optionMenu.querySelectorAll(".dropdown-list-item");
-        const sBtn_text = optionMenu.querySelector(".dropdown-txt");
+    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => { 
+        const dropdown = dropdownWrap.querySelector(".dropdown");
+        const button = dropdown.querySelector("button");
+        const list = dropdown.querySelector(".dropdown-list");
+        const text = dropdown.querySelector(".dropdown-txt");
 
-        selectBtn.addEventListener("click", () => {
-            optionMenu.classList.toggle("active");
-            optionList.classList.toggle("hidden");
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+            
+            // 다른 드롭다운 닫기
+            document.querySelectorAll(".dropdown").forEach(d => {
+                if (d !== dropdown) d.classList.remove("active");
+            });
+            document.querySelectorAll(".dropdown-list").forEach(l => {
+                if (l !== list) l.classList.add("hidden");
+            });
+
+            // 현재 드롭다운 열기/닫기
+            const isHidden = list.classList.toggle("hidden");
+            dropdown.classList.toggle("active", !isHidden);
+
+            if (isHidden) return;
+
+            let container = dropdownWrap.closest("div");
+            while (container && container !== document.body) {
+                if (["auto", "scroll", "hidden"].includes(getComputedStyle(container).overflowY)) break;
+                container = container.parentElement;
+            }
+            if (!container) container = document.documentElement;
+
+            // 드롭다운 위치 조정
+            let { bottom: cBottom, top: cTop } = container.getBoundingClientRect();
+            let { bottom: bBottom, top: bTop } = button.getBoundingClientRect();
+            let listHeight = list.offsetHeight;
+
+            list.style.top = (cBottom - bBottom < listHeight && bTop - cTop > listHeight) ? "auto" : "100%";
+            list.style.bottom = (list.style.top === "auto") ? "100%" : "auto";
+            list.style.maxHeight = `${Math.max((list.style.top === "auto" ? bTop - cTop : cBottom - bBottom) - 10, 0)}px`;
         });
 
-        options.forEach((option) => {
+        list.querySelectorAll(".dropdown-list-item button").forEach(option => {
             option.addEventListener("click", () => {
-                const selectedOption = option.querySelector("span").innerText;
-                sBtn_text.innerText = selectedOption;
-
-                optionList.classList.add("hidden");
-                optionMenu.classList.remove("active");
+                text.innerText = option.innerText;
+                list.classList.add("hidden");
+                dropdown.classList.remove("active");
             });
         });
 
-        document.addEventListener("click", (event) => {
-            if (!dropdownWrap.contains(event.target)) {
-                optionMenu.classList.remove("active");
-                optionList.classList.add("hidden");
-            }
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("active"));
+            document.querySelectorAll(".dropdown-list").forEach(l => l.classList.add("hidden"));
         });
     });
 </script>

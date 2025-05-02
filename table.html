@@ -42,16 +42,6 @@
     </script>
 </head>
 <body>
-    <!-- 
-    테이블 사용하는 페이지 목록
-    1. 봇 상세보기 - 연동 데이터, 참여 멤버, 연동 데이터 > 지식베이스 상세
-    2. 지식베이스 - 전체 지식베이스 관리, 지식베이스 상세(지식데이터, 사용자 사전)
-    3. 프롬프트 - 프롬프트 관리 (표 보기)
-    4. 외부 연동 - 외부 연동 상세 
-    5. 설정 - 사용자 관리 (일반 사용자, 관리자)
-    6. 결재함 
-    -->
-    <!-- 필터 바텀시트 -->
     <div class="bottomsheet-container">
         <div class="bottomsheet-layer"></div>
         <div class="bottomsheet">
@@ -62,10 +52,12 @@
                         <i class="fa-light fa-arrows-rotate"></i>
                         초기화
                     </button>
-                    <span class="btn btn-icon jc-between primary">
-                        적용하기
-                        <i class="fa-light fa-check"></i>
-                    </span>
+                    <div>
+                        <button class="btn btn-transparent btn-icon primary pr0">
+                            적용하기
+                            <i class="fa-light fa-check"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="bottomsheet-list">
                     <p class="menu-title">항목</p>
@@ -229,19 +221,19 @@
                                         <li>
                                             <label for="">등록일</label>
                                             <div role="button" class="btn btn-transparent icon-only">
-                                                <i class="fa-light fa-eye-slash"></i>
+                                                <i class="fa-solid fa-eye-slash"></i>
                                             </div>
                                         </li>
                                         <li>
                                             <label for="">등록자</label>
                                             <div role="button" class="btn btn-transparent icon-only">
-                                                <i class="fa-light fa-eye-slash"></i>
+                                                <i class="fa-solid fa-eye-slash"></i>
                                             </div>
                                         </li>
                                         <li>
                                             <label for="">최종 편집자</label>
                                             <div role="button" class="btn btn-transparent icon-only">
-                                                <i class="fa-light fa-eye-slash"></i>
+                                                <i class="fa-solid fa-eye-slash"></i>
                                             </div>
                                         </li>
                                         <li>
@@ -262,6 +254,17 @@
         <!-- 데이터 펼치기 -->
         <div id="table" class="table">
             <table class="w100p">
+                <colgroup>
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="7%">
+                    <col width="10%">
+                    <col width="7%">
+                    <col width="7%">
+                    <col width="7%">
+                    <col width="40%">
+                    <col width="12%">
+                </colgroup>
                 <thead>
                     <tr>
                         <th>
@@ -346,7 +349,7 @@
                         <td>마케팅팀</td>
                         <td>팀장</td>
                         <td>
-                            <div class="dropdown"></div>
+                            
                         </td>
                         <td>10</td>
                         <td>
@@ -373,11 +376,11 @@
                         <td>팀장</td>
                         <td>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                         </td>
@@ -411,11 +414,11 @@
                         <td>팀장</td>
                         <td>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                         </td>
@@ -444,11 +447,11 @@
                         <td>팀장</td>
                         <td>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                         </td>
@@ -477,11 +480,11 @@
                         <td>팀장</td>
                         <td>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                             <span class="tag tag-md tag-default-02 tag-delete">
-                                Tag
+                                <span>Tag</span>
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                         </td>
@@ -535,33 +538,57 @@
 </body>
 <script>
     // 드롭다운
-    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => {
-        const optionMenu = dropdownWrap.querySelector(".dropdown");
-        const selectBtn = optionMenu.querySelector("button");
-        const optionList = optionMenu.querySelector(".dropdown-list");
-        const options = optionMenu.querySelectorAll(".dropdown-list-item");
-        const sBtn_text = optionMenu.querySelector(".dropdown-txt");
+    document.querySelectorAll(".dropdown-wrap").forEach((dropdownWrap) => { 
+        const dropdown = dropdownWrap.querySelector(".dropdown");
+        const button = dropdown.querySelector("button");
+        const list = dropdown.querySelector(".dropdown-list");
+        const text = dropdown.querySelector(".dropdown-txt");
 
-        selectBtn.addEventListener("click", () => {
-            optionMenu.classList.toggle("active");
-            optionList.classList.toggle("hidden");
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+            
+            // 다른 드롭다운 닫기
+            document.querySelectorAll(".dropdown").forEach(d => {
+                if (d !== dropdown) d.classList.remove("active");
+            });
+            document.querySelectorAll(".dropdown-list").forEach(l => {
+                if (l !== list) l.classList.add("hidden");
+            });
+
+            // 현재 드롭다운 열기/닫기
+            const isHidden = list.classList.toggle("hidden");
+            dropdown.classList.toggle("active", !isHidden);
+
+            if (isHidden) return;
+
+            let container = dropdownWrap.closest("div");
+            while (container && container !== document.body) {
+                if (["auto", "scroll", "hidden"].includes(getComputedStyle(container).overflowY)) break;
+                container = container.parentElement;
+            }
+            if (!container) container = document.documentElement;
+
+            // 드롭다운 위치 조정
+            let { bottom: cBottom, top: cTop } = container.getBoundingClientRect();
+            let { bottom: bBottom, top: bTop } = button.getBoundingClientRect();
+            let listHeight = list.offsetHeight;
+
+            list.style.top = (cBottom - bBottom < listHeight && bTop - cTop > listHeight) ? "auto" : "100%";
+            list.style.bottom = (list.style.top === "auto") ? "100%" : "auto";
+            list.style.maxHeight = `${Math.max((list.style.top === "auto" ? bTop - cTop : cBottom - bBottom) - 10, 0)}px`;
         });
 
-        options.forEach((option) => {
+        list.querySelectorAll(".dropdown-list-item button").forEach(option => {
             option.addEventListener("click", () => {
-                const selectedOption = option.querySelector("span").innerText;
-                sBtn_text.innerText = selectedOption;
-
-                optionList.classList.add("hidden");
-                optionMenu.classList.remove("active");
+                text.innerText = option.innerText;
+                list.classList.add("hidden");
+                dropdown.classList.remove("active");
             });
         });
 
-        document.addEventListener("click", (event) => {
-            if (!dropdownWrap.contains(event.target)) {
-                optionMenu.classList.remove("active");
-                optionList.classList.add("hidden");
-            }
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("active"));
+            document.querySelectorAll(".dropdown-list").forEach(l => l.classList.add("hidden"));
         });
     });
 </script>

@@ -1,18 +1,23 @@
 .tags {
     margin-top: 0.5rem;
+    display: flex;
     gap: 3px;
 }
 
 .tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 50px;
+    // overflow: hidden;
+    display: inline-block;
+    text-align: center;
     border-radius: 25px;
     padding: 0 0.5rem;
 }
 
 .tag-sm {
     height: 1.125rem;
+    line-height: 1.125rem;;
     font-size: 0.75rem;
 
     i {
@@ -22,6 +27,7 @@
 
 .tag-md {
     height: 1.5rem;
+    line-height: 1.5rem;
     font-size: 0.75rem;
 
     i {
@@ -31,6 +37,7 @@
 
 .tag-lg {
     height: 1.875rem;
+    line-height: 1.875rem;
     font-size: 1rem;
 
     i {
@@ -65,6 +72,21 @@
 .tag-delete {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     justify-content: center;
+    max-width: 55px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: unset;
+
+    span {
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    i {
+        flex-shrink: 0;
+    }
 }

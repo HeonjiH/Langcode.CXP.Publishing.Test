@@ -59,6 +59,64 @@
                         font-weight: 600;
                     }
 
+                    .doc-list {
+                        ul {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+
+                            .doc-item {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                .doc-info {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 15px;
+                                    line-height: 125%;
+
+                                    .title {
+                                        .doc-type {
+                                            font-size: 0.625rem;
+                                            color: var(--lang-text-03);
+                                        }
+
+                                        .doc-name {
+                                            font-size: 0.75rem;
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    .score {
+                                        display: flex;
+                                        gap: 15px;
+                                        align-items: center;
+                                        font-size: 0.625rem;
+                                        color: var(--lang-text-03);
+                                    }
+                                }
+
+                                .doc-btn {
+                                    button {
+                                        padding: 0;
+
+                                        &:not(:last-child) {
+                                            margin-right: 5px;
+                                        }
+                                        
+                                        i, svg {
+                                            height: 0.75rem;
+                                            font-size: 12px;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        
+                    }
+
                     ul {
                         li {
                             &:last-child {
@@ -119,7 +177,7 @@
         h3 {
             color: var(--lang-text-01); 
             font-weight: 600; 
-            font-size: var(--lang-font-basic);
+            font-size: 0.875rem;
             white-space: nowrap;
         }
 
@@ -131,6 +189,18 @@
     &.prompt-category-list {
         ul {
             border-bottom: 1px solid var(--lang-ui-01);
+        }
+    }
+
+    .table-wrap {
+        .table {
+            table {
+                min-width: auto;
+
+                th, td {
+                    padding: 1rem;
+                }
+            }
         }
     }
 }
@@ -199,7 +269,7 @@
         position: absolute;
 
         &.second-panel {
-            // display: none; /* 임시*/
+            display: none; /* 임시*/
             position: absolute;
             top: 0;
             left: 0;
@@ -252,7 +322,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                font-size: var(--lang-font-basic);
+                font-size: 0.875rem;
             }
             
         }

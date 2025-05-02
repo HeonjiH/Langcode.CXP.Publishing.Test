@@ -55,9 +55,38 @@
                         }
                     }
                 }
+
+                // 4차 패널 메뉴
+                .right-menu {
+                    display: flex; align-items: center; height: 100%;
+                    .btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        min-width: 48px; 
+                        height: 100%;
+
+                        i {
+                            font-size: 1rem;
+                        }
+
+                        &.active {
+                            border-bottom: 2px solid var(--lang-primary);
+                            color: var(--lang-primary);
+
+                            i {
+                                color: var(--lang-primary);
+                            }
+                        }
+                    }
+                }
             }
             .page-content {
-                position: relative; overflow-y: hidden; box-sizing: border-box; height: calc(100% - 48px);
+                position: relative; 
+                overflow-y: hidden;
+                overflow-x: hidden; 
+                box-sizing: border-box; 
+                height: calc(100% - 48px);
 
                 &.knowledge-detail {
                     height: calc(100% - 88px);
@@ -79,6 +108,10 @@
 
     &.panel-active {width: calc(100% - 22.5rem)!important;}
 
+    &:has(hr) {
+        gap: 1.875rem;
+    }
+
     .section-item {
         .section-title {
             display: flex;
@@ -89,6 +122,10 @@
             h3 {
                 font-size: 1.25rem;
                 color: var(--lang-text-01);
+            }
+
+            h4 {
+                font-size: 1rem;
             }
         }
 
@@ -111,6 +148,7 @@
     position: relative;
 
     &.sticky-box {
+
         .box-title {
             position: sticky;
             position: -webkit-sticky;
@@ -204,6 +242,59 @@
         }
     }
 
+}
+
+.btn-info {
+    position: relative;
+
+    &.btn-user-info {
+            border-radius: 100%;
+            background-color: var(--lang-primary);
+            width: 1rem;
+            height: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+
+        .count {
+            font-weight: 600;
+            color: var(--lang-text-02);
+        }
+
+        .tooltip {
+            bottom: -55px;
+            top: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0;
+            max-width: 120px;
+            width: max-content;
+            min-width: auto;
+            box-sizing: border-box;
+        }
+    }
+
+    .tooltip {
+        display: none;
+        position: absolute;
+        top: -55px;
+        left: -300%;
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 10;
+        width: auto;
+        min-width: 120px;
+        text-align: left;
+
+        &.active {
+            display: block;
+        }
+    }
 }
 
 @include tablet {

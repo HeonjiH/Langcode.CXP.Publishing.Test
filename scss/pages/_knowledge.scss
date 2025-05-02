@@ -1,16 +1,5 @@
 @import '../abstracts/mixin';
 
-.knowledge-container {
-    .detail-title-wrap {
-        display: flex; justify-content: space-between; align-items: center; padding: 2.5rem 2.5rem 0 2.5rem; box-sizing: border-box;
-
-        .left {
-            .detail-title {display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: var(--lang-font-h4);}
-            .title-desc {padding-inline-start: 1.15rem;}
-        }
-    }
-}
-
 .knowledgebase {
     .panel-title {
         padding-right: 0;
@@ -62,7 +51,19 @@
 }
 
 .knowledge-content {
-    .tab-wrap {padding: 2.5rem; box-sizing: border-box;}
+    padding: 1.875rem;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto!important;
+
+    &:has(.knowledge-weight-wrap), &:has(.diagram) {
+        padding: 0;
+    }
+
+    .tab-wrap {
+        padding: 2.5rem; 
+        box-sizing: border-box;
+    }
 
     &.knowledge-detail {
         .tab-wrap {
@@ -70,8 +71,11 @@
         }
     }
 
+    .diagram {
+        height: 100%;
+    }
+
     .knowledge-detail-wrap {
-        padding: 1.875rem; box-sizing: border-box;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -81,6 +85,18 @@
         }
 
         .box-wrap {
+            &.sticky-box {
+                .box-title {
+                    top: -30px;
+
+                    > div:nth-child(1) {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+                }
+            }
+
             .box-con {
                 &.accor-content {
                     max-height: 0;
@@ -104,26 +120,6 @@
     > .btn-wrap {
         display: flex; justify-content: flex-end;
         button {min-width: 220px;}
-    }
-    
-    .knowledge-setting-wrap {
-        padding: 2.5rem; box-sizing: border-box;
-        
-        .form {
-            .form-content {
-                .form-input {
-                    width: 80%;
-                    
-                    .input-item {
-                        button {min-width: 220px;}
-                        label {margin-top: 0.5rem; line-height: 125%;}
-                    }
-                    
-                }
-            }
-        }
-
-        hr {margin: 2.5rem 0; border-color: var(--lang-chat-border);}
     }
 
     .knowledge-weight-wrap {
@@ -200,18 +196,24 @@
 }
 
 @include tablet {
-    .knowledge-container {
-        .detail-title-wrap {padding: 1.5rem 1.5rem 0 1.5rem}
-    }
     .knowledge-content {
-        .tab-wrap {padding: 1.5rem;}
+        padding: 1.25rem;
+
+        .tab-wrap {
+            padding: 1.5rem;
+        }
         
         .knowledge-setting-wrap {
-            padding: 1.25rem;
             .form {
                 .form-content {
                     .form-input {width: 100%;}
                 }
+            }
+        }
+
+        .knowledge-weight-wrap {
+            .left {
+                padding: 1.25rem;
             }
         }
     }
@@ -219,9 +221,9 @@
 
 @include mobile {
     .knowledge-content {
+        padding: 1.125rem;
+        
         .knowledge-detail-wrap {
-            padding: 1.125rem;
-
             .accor-wrap {
                 display: none;
             }
@@ -232,7 +234,7 @@
             
             .left {
                 width: 100%;
-                padding: 1.25rem;
+                padding: 1.125rem;
 
                 .doc-page {
                     .form-input {

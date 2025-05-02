@@ -12,7 +12,7 @@ function toggleSlide() {
 function togglePanel(panelId, column) {
     const panelCon = document.getElementById(panelId);
     const activePanel = document.querySelector('.panel-wrap.active');
-    const chatButtons = document.querySelectorAll('.chat-menu .btn');
+    const chatButtons = document.querySelectorAll('.right-menu .btn');
     const sectionWrap = document.querySelector('div.section-wrap');
     const clickedButton = event.currentTarget;
 
@@ -56,12 +56,13 @@ function openPanel(panelId) {
     const targetPanel = document.getElementById(panelId);
     if (targetPanel) {
         targetPanel.classList.add("active");
+        targetPanel.style.display = 'block';
     }
 }
 
 function closePanel() {
     const activePanel = document.querySelector('.panel-wrap.active');
-    const buttons = document.querySelectorAll('.chat-menu .btn');
+    const buttons = document.querySelectorAll('.right-menu .btn');
     const panelCon = document.querySelector('fourth-panel.panel-wrap');
     const sectionWrap = document.querySelector('div.section-wrap');
     const clickedButton = event.currentTarget;
@@ -93,7 +94,7 @@ function mobileMenu() {
 
 function toggleTable(item) {
     const content = document.getElementById(item);
-
+    
     content.classList.toggle('show');
 }
 

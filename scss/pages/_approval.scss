@@ -1,3 +1,9 @@
+.approval-content {
+    padding: 1.875rem;
+    box-sizing: border-box;
+    overflow-y: auto!important;
+}
+
 .approval-status {
     ul {
         display: flex;
@@ -37,9 +43,15 @@
         font-size: .75rem;
     }
     .status-danger {
-        background-color: var(--lang-danger);
+        background-color: #B11515;
     }
     .status-success {
         background-color: var(--lang-success);
+    }
+}
+
+@include mobile {
+    .approval-content {
+        padding: 1.125rem;
     }
 }

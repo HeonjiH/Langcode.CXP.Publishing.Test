@@ -123,7 +123,7 @@
                         <li>
                             <button class="btn btn-lg" onclick="location.href='bot.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
-                                <p>봇 관리</p>
+                                <p>에이전트 관리</p>
                             </button>
                         </li>
                         <li>
@@ -133,7 +133,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-lg" onclick="location.href='prompt_category.html'">
+                            <button class="btn btn-lg" onclick="location.href='prompt.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
                                 <p>프롬프트 관리</p>
                             </button>
@@ -184,117 +184,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="panel-wrap second-panel">
-                    <div class="panel-title pr0">
-                        <button class="btn-transparent mobile-menu" onclick="mobileMenu()"><i class="far fa-bars"></i></button>
-                        <h3>참여 봇 목록</h3>
-                        <div class="flex title-menu">
-                            <button class="btn btn-transparent icon-only"><i class="far fa-magnifying-glass"></i></button>
-                            <button class="btn btn-transparent icon-only"><i class="fa-light fa-gear"></i></button>
-                        </div>
-                    </div>
-                    <div class="search hidden">
-                        <div class="search-box">
-                            <div class="input-item input-search borderless">
-                                <div><i class="far fa-magnifying-glass"></i></div>
-                                <input type="text" class="input-md" placeholder="Search Something...">
-                                <button class="btn clear"><i class="far fa-xmark"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-bot-list new">
-                        <ul>
-                            <li class="selected">
-                                <a href="">
-                                    <div class="avatar avatar-lg">L</div>
-                                    <div class="chat-bot">
-                                        <div class="chat-bot-top">
-                                            <div class="bot-name">봇 이름
-                                                <span><i class="fa-solid fa-bell-slash"></i></span>
-                                                <span><i class="fa-solid fa-thumbtack"></i></span>
-                                            </div>
-                                            <div class="msg-date">오전 00:00</div>
-                                        </div>
-                                        <div class="msg-preview">
-                                            메시지 내용 미리보기
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="avatar avatar-lg">L</div>
-                                    <div class="chat-bot">
-                                        <div class="chat-bot-top">
-                                            <div class="bot-name">봇 이름
-                                                <span><i class="fa-solid fa-bell-slash"></i></span>
-                                                <span><i class="fa-solid fa-thumbtack"></i></span>
-                                            </div>
-                                            <div class="msg-date">오전 00:00</div>
-                                        </div>
-                                        <div class="msg-preview">
-                                            메시지 내용 미리보기
-                                            <span class="msg-count">1</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="avatar avatar-lg">L</div>
-                                    <div class="chat-bot">
-                                        <div class="chat-bot-top">
-                                            <div class="bot-name">봇 이름
-                                                <span><i class="fa-solid fa-thumbtack"></i></span>
-                                            </div>
-                                            <div class="msg-date">오전 00:00</div>
-                                        </div>
-                                        <div class="msg-preview">
-                                            메시지 내용 미리보기
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="avatar avatar-lg">L</div>
-                                    <div class="chat-bot">
-                                        <div class="chat-bot-top">
-                                            <div class="bot-name">봇 이름
-                                                <span><i class="fa-solid fa-bell-slash"></i></span>
-                                            </div>
-                                            <div class="msg-date">오전 00:00</div>
-                                        </div>
-                                        <div class="msg-preview">
-                                            메시지 내용 미리보기
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="avatar avatar-lg">L</div>
-                                    <div class="chat-bot">
-                                        <div class="chat-bot-top">
-                                            <div class="bot-name">봇 이름</div>
-                                            <div class="msg-date">오전 00:00</div>
-                                        </div>
-                                        <div class="msg-preview">
-                                            메시지 내용 미리보기
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a class="btn btn-ui-04 btn-lg btn-icon">
-                                <i class="far fa-plus"></i>
-                                봇 추가하기
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <main id="main" class="">
+                <main id="main" class="nolnb">
                     <div class="main-container chat-container">
                         <div class="page-title chat-title">
                             <div class="left">
@@ -315,11 +205,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="page-content knowledge-content w100p flex" style="overflow-y: auto;">
+                        <div class="page-content knowledge-content w100p flex" >
                             <div class="knowledge-wrap panel-active" style="width: calc(100% - 22.5rem);">
                                 <div class="section-wrap diagram">
                                     <!-- 임시 -->
-                                    <div style="padding: 40px; box-sizing: border-box;"></div>
+                                    <div style="padding: 40px; box-sizing: border-box; height: 100%;"></div>
                                 </div>
                             </div>
                             <div class="fourth-panel panel-wrap inner active" id="panel1">
@@ -356,7 +246,7 @@
                                                     <label for="">연동된 봇</label>
                                                     <div class="input-item">
                                                         <span>2(봇이름_1, 봇이름_2)</span>
-                                                        <a href="" class="link-more primary">연동하기</a>
+                                                        <button class="link-more btn btn-transparent primary pd0">연동하기</button>
                                                     </div>
                                                 </div>
                                                 <div class="form-input vertical static">

@@ -2,6 +2,7 @@
 
 .table-wrap {
     color: var(--lang-text-01);
+    position: relative;
 
     .table-name {
         font-size: 1rem; margin-bottom: 10px;
@@ -103,22 +104,54 @@
     }
 
     .table {
+        width: 100%;
+
         table {
             width: 100%;
-            font-size: var(--lang-font-size-basic);
+            table-layout: fixed;
+            font-size: 0.875rem;
+            min-width: 600px;
 
             tr {
+                .chk-item  {
+                    width: 12px;
+                    input[type=checkbox] + label.label-cb {
+                        margin-right: 0!important;
+                    }
+                }
+
+                .btn:has(>i) {
+                    padding: 0;
+                    width: 16px!important;
+                }
+                
                 th, td {
                     vertical-align: middle;
                     height: 3rem;
                     text-align: left;
-                    padding: 0.75rem;
+                    padding: 0.5rem;
                     box-sizing: border-box;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+
+                    &:has(.dropdown-wrap) {
+                        overflow: visible;
+                    }
+
+                    &:has(.chk-item) {
+                        text-align: center;
+
+                        .chk-item {
+                            display: inline-block;
+                        }
+                    }
 
                     .table-btn {
                         position: relative;
                         display: flex;
                         align-items: center;
+                        justify-content: flex-end;
 
                         .icon-only
                         {
@@ -162,12 +195,11 @@
                         transition: height 0.3s ease, opacity 0.3s ease;
                         overflow: hidden; 
                         display: none;
-                    }
 
-                    // &.detail-row.active {
-                    //     height: auto;
-                    //     opacity: 1;
-                    // }
+                        &:has(.dropdown-wrap) {
+                            overflow: visible;
+                        }
+                    }
 
                     td {
                         background-color: var(--lang-table-row);
@@ -183,8 +215,19 @@
                         }
                         
                         .tag {
-                            margin: 0 5px;
+                            margin: 0 3px 0 0;
                         }
+
+                        &:has(.btn) {
+                            text-align: center;
+                        }
+
+                        // &:has(.tag) {
+                        //     display: flex;
+                        //     align-items: center;
+                        //     gap: 5px;
+                        //     height: 100%;
+                        // }
                     }
                 }
             
@@ -199,10 +242,50 @@
                 tbody {
                     tr {
                         td {
-                            padding: 0.375rem 0.75rem;
+                            overflow: unset;
+                            padding: 0.375rem 0.5rem;
 
                             .table-btn {
                                 justify-content: flex-end;
+                            }
+
+                            .input-item {
+                                input {
+                                    width: 100%;
+                                }
+                            }
+
+                            .dropdown-wrap {
+                                min-width: 150px;
+
+                                .dropdown {
+                                    > button {
+                                        width: 100%; 
+                                        min-width: 150px;
+                                        max-width: 100%; 
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        gap: 8px;
+
+                                        .dropdown-txt {
+                                            flex-grow: 1;
+                                            min-width: 0;
+                                            max-width: calc(100% - 24px);
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            text-align: left;
+                                        }
+                                    
+                                        .dropdown-icon {
+                                            flex-shrink: 0;
+                                            margin-left: 0.5rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -212,10 +295,14 @@
     }
 
     .pagination {
-        width: 100%; height: 48px; display: flex; justify-content: space-between; align-items: center; background-color: var(--lang-table-row); border-top: 1px solid var(--lang-table-border);
+        width: 100%; height: 48px; box-sizing: border-box; padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; background-color: var(--lang-table-row); border-top: 1px solid var(--lang-table-border);
 
         select {
             border: none; background-color: transparent; color: var(--lang-text-01);
+
+            option {
+                color: var(--lang-ui-00);
+            }
         }
 
         .left {
@@ -237,17 +324,17 @@
             > * {height: 100%; display: flex; align-items: center;}
 
             .pagination-current {
-                padding: 0 1rem; border-right: 1px solid var(--lang-table-border);
+                height: 20px; padding: 0 1rem; border-right: 1px solid var(--lang-table-border);
 
-                select {padding: 0 7px;}
+                select {padding: 0 7px; height: 20px;}
                 span {display: inline-block; margin-left: 0.5rem;}
             }
 
             .pagination-btn-wrap {
                 .btn-pagination {
-                    width: 48px; height: 48px; padding: 0; display: flex; justify-content: center; align-items: center;
+                    width: 40px; height: 20px; padding: 0; display: flex; justify-content: center; align-items: center;
 
-                    &:nth-child(1) {border-right: 1px solid var(--lang-table-border);}
+                    // &:nth-child(1) {border-right: 1px solid var(--lang-table-border);}
                 }
             }
         }
@@ -258,9 +345,9 @@
     .table-wrap {
         #table {
             width: 100%;
-            overflow-x: auto;
 
             table {
+
                 tr, td {
                     white-space: nowrap;
                 }
@@ -292,9 +379,47 @@
 
 }
 
+@include mobile-large {
+    .table {
+        overflow-x: auto;
+        table {
+            display: block;
+            -webkit-overflow-scrolling: touch;
+            table-layout: auto;
+
+            tr {
+                td, th {
+                    white-space: normal;
+                    overflow: visible;
+                    text-overflow: unset;
+                }
+            }
+        }
+    }
+}
+
 @include mobile {
     .table-wrap {
         .table-search {
+            .input-item {
+                padding: 0;
+                position: relative;
+
+                > input {
+                    opacity: 0;;
+                    visibility: hidden;
+                    position: absolute;
+                    height: 100%;
+                    background-color: var(--lang-ui-03);
+                    z-index: 9;
+                }
+
+                > div {
+                    justify-content: space-around;
+                    width: 100%;
+                }
+            }
+
             button {
                 &.btn-primary {
                     background-color: var(--lang-table-row);

@@ -38,23 +38,25 @@
 
     &:focus {
         &::after {
-            position: absolute; content: ''; display: block; width: 98%; height: 98%; border: 1px solid var(--lang-text-01);
+            position: absolute; content: ''; display: block; width: 95%; height: 96%; border: 1px solid var(--lang-text-01);
         }
     }
 }
 .link-more {
+    cursor: pointer;
     font-size: 0.875rem;
     text-decoration: underline;
+    text-underline-offset: 4px;
     font-weight: 400;
-}
-.btn-edit-wrap {
-    display: flex;
-    button {padding: 3px 7px; box-sizing: border-box;}
 }
 
 button, a {
     &.primary {
         color: var(--lang-primary)
+    }
+
+    &.disabled {
+        color: var(--lang-text-03);
     }
 
     &.danger {

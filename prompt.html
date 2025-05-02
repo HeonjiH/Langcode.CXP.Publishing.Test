@@ -123,7 +123,7 @@
                         <li>
                             <button class="btn btn-lg" onclick="location.href='bot.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M8.87 15 8 14.5l2-3.5h3a1 1 0 0 0 1-1V8.5h1V10a2 2 0 0 1-2 2h-2.42l-1.71 3ZM7.5 3H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4.5v1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4.5v1ZM15 5V4h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.745A2.482 2.482 0 0 0 12 2.05V1h-1v1.05a2.484 2.484 0 0 0-.876.367l-.745-.745-.707.707.744.745A2.482 2.482 0 0 0 9.051 4H8v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.745c.262.174.557.302.876.366V8h1V6.95c.319-.066.614-.193.876-.367l.745.745.707-.707-.744-.745c.173-.262.3-.557.365-.876H15Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5S10.673 3 11.5 3s1.5.673 1.5 1.5S12.327 6 11.5 6Z"/></svg>
-                                <p>봇 관리</p>
+                                <p>에이전트 관리</p>
                             </button>
                         </li>
                         <li>
@@ -133,7 +133,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-lg active" onclick="location.href='prompt_category.html'">
+                            <button class="btn btn-lg active" onclick="location.href='prompt.html'">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#fff" d="M3 10.5h3v-1H3v-3h9v1h1v-5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v-1H3v-3Zm0-8h9v3H3v-3Z"/><path fill="#fff" d="M14 12v-1h-1.05a2.483 2.483 0 0 0-.366-.876l.744-.745-.707-.707-.745.744A2.482 2.482 0 0 0 11 9.051V8h-1v1.05a2.484 2.484 0 0 0-.876.366l-.745-.744-.707.707.744.745a2.482 2.482 0 0 0-.365.876H7v1h1.05c.066.319.193.614.366.876l-.744.745.707.707.745-.744c.262.173.557.3.876.365V15h1v-1.05c.319-.066.614-.193.876-.366l.745.744.707-.707-.744-.745c.173-.262.3-.557.365-.876H14Zm-3.5 1c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5Z"/></svg>
                                 <p>프롬프트 관리</p>
                             </button>
@@ -184,31 +184,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="panel-wrap second-panel lnb-wrap">
-                    <div class="panel-title pr0">
-                        <button class="btn-transparent mobile-menu" onclick="mobileMenu()"><i class="far fa-bars"></i></button>
-                        <h3>프롬프트 카테고리 목록</h3>
-                        <div class="title-menu">
-                            <button class="btn btn-transparent icon-only" onclick="toggleMenu(event, this)">
-                                <i class="fa-light fa-gear"></i>
-                            </button>
-                            <div class="list-menu hidden" id="contextMenu">
-                                <ul>
-                                    <li><button class="btn btn-transparent">프롬프트 카테고리 관리</button></li>
-                                    <li><button class="btn btn-transparent" onclick="openModal('modal1')">프롬프트 카테고리 추가</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="prompt-category-list">
-                        <ul class="prompt-category-item lnb">
-                            <li class="selected"><button class="btn btn-lg">Persona</button></li>
-                            <li><button class="btn btn-lg">Format</button></li>
-                            <li><button class="btn btn-lg">Guideline</button></li>
-                        </ul>
-                    </div>
-                </div>
-                <main id="main" class="">
+                <main id="main" class="nolnb">
                     <!-- 일괄 삭제 모달 -->
                     <div class="modal-container" style="display: none;" id="modal1">
                         <div class="modal-wrap modal-txt">
@@ -278,530 +254,637 @@
                     </div>
                     <div class="main-container prompt-container">
                         <div class="page-title">
-                            <div class="breadcrumb">
-                                <span>Persona</span>
+                            <div class="left">
+                                <div class="breadcrumb">
+                                    <span>프롬프트 관리</span>
+                                </div>
+                                <div class="mobile mobile-title">
+                                    <button class="btn btn-transparent btn-lg" onclick="location.href='prompt.html'">
+                                        <i class="fa-light fa-chevron-left"></i>
+                                    </button>
+                                    <p>프롬프트 관리</p>
+                                </div>
                             </div>
-                            <div class="mobile mobile-title">
-                                <button class="btn btn-transparent btn-lg" onclick="location.href='prompt_category.html'">
-                                    <i class="fa-light fa-chevron-left"></i>
+                            <div class="right right-menu">
+                                <button class="btn btn-transparent active">
+                                    <i class="fa-light fa-table"></i>
+                                    표 보기
                                 </button>
-                                <p>Persona</p>
+                                <button class="btn btn-transparent">
+                                    <i class="fa-light fa-table-cells-large"></i>
+                                    카드 보기
+                                </button>
                             </div>
                         </div>
-                        <div class="page-content prompt-content" style="overflow-y: auto;">
-                            <div class="prompt-wrap">
-                                <div class="description-box">
-                                    <div class="grid row">
-                                        <div class="col col-4">
-                                            <div class="prompt-info-item">
-                                                <label for="">설명</label>
-                                                <div>
-                                                    <p>
-                                                        (프롬프트 설명) 아련 컴퓨터 다솜 미리내 사과 미쁘다 산들림 소록소록 로운 포도 아슬라 아름드리 여우별 산들림 예그리나 비나리 이플 미리내 아련 여우비 로운 감또개 미쁘다 컴퓨터 아련 다솜 함초롱하다 감사합니다 미리내 
-                                                        사과 여우별 예그리나 나래 아름드리 감사합니다 책방 도서관 여우비 여우비 다솜 예그리나 가온누리 사과 바람꽃 감또개 감또개 곰다시 감또개 함초롱하다 예그리나.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid row">
-                                        <div class="col col-4">
-                                            <div class="prompt-info-item">
-                                                <label for="">등록자</label>
-                                                <div>
-                                                    <span>홍길동 (abcde@gmail.com)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-4">
-                                            <div class="prompt-info-item">
-                                                <label for="">등록일</label>
-                                                <div>
-                                                    <span>0000-00-00 00:00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-4">
-                                            <div class="prompt-info-item">
-                                                <label for="">최종 수정자</label>
-                                                <div>
-                                                    <span>홍길동 (abcde@gmail.com)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-4">
-                                            <div class="prompt-info-item">
-                                                <label for="">최종 수정일</label>
-                                                <div>
-                                                    <span>0000-00-00 00:00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="box-expand mobile">
-                                        <span>
-                                            펼치기
-                                            <i class="fa-light fa-chevron-down"></i>
-                                        </span>
-                                        <span class="fold">
-                                            접기
-                                            <i class="fa-light fa-chevron-up"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="section-wrap">
-                                    <div class="table-wrap">
-                                        <div class="table-search">
-                                            <div class="input-item input-search borderless">
-                                                <input type="text" class="input-md">
-                                                <div class="flex ai-center">
-                                                    <button class="btn btn-transparent btn-lg icon-only">
-                                                        <i class="far fa-magnifying-glass"></i>
-                                                    </button>
-                                                    <!-- 필터링 -->
-                                                    <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter1')">
-                                                        <i class="far fa-filter"></i>
-                                                        <div class="context-menu" id="table_filter1">
-                                                            <div class="drag-handle"></div>
-                                                            <div class="context-menu-con">
-                                                                <div>
-                                                                    <p class="menu-title">항목</p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <label for="">봇</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox" checked>
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <label for="">지식베이스</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox" checked>
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <label for="">지식데이터</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox">
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <label for="">프롬프트</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox">
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="menu-title">결과</p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <label for="">승인</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox">
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <label for="">반려</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox">
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <label for="">대기</label>
-                                                                            <div class="input-item chk-item">
-                                                                                <input type="checkbox">
-                                                                                <label for="" class="label-cb"></label>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
+                        <div class="page-content prompt-content">
+                            <div class="prompt-wrap section-wrap">
+                                <div class="table-wrap">
+                                    <div class="table-search">
+                                        <div class="input-item input-search borderless">
+                                            <input type="text" class="input-md">
+                                            <div class="flex ai-center">
+                                                <button class="btn btn-transparent btn-lg icon-only">
+                                                    <i class="far fa-magnifying-glass"></i>
+                                                </button>
+                                                <!-- 필터링 -->
+                                                <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter1')">
+                                                    <i class="far fa-filter"></i>
+                                                    <div class="context-menu" id="table_filter1">
+                                                        <div class="drag-handle"></div>
+                                                        <div class="context-menu-con">
+                                                            <div>
+                                                                <p class="menu-title">항목</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <label for="">에이전트</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox" checked>
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">지식베이스</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox" checked>
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">지식데이터</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">프롬프트</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
                                                             </div>
-                                                            <div class="context-btn-wrap">
-                                                                <div role="button" class="btn btn-default btn-lg btn-icon">
-                                                                    초기화
-                                                                    <i class="fa-sharp fa-light fa-arrows-rotate"></i>
-                                                                </div>
-                                                                <div role="button" class="btn btn-primary btn-lg btn-icon">
-                                                                    적용하기
-                                                                    <i class="fa-light fa-check"></i>
-                                                                </div>
+                                                            <div>
+                                                                <p class="menu-title">결과</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <label for="">승인</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">반려</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">대기</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
                                                             </div>
                                                         </div>
-                                                    </button>
-                                                </div>
-                                                <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='prompt_add.html'">
-                                                    프롬프트 추가하기
-                                                    <i class="far fa-plus"></i>
+                                                        <div class="context-btn-wrap">
+                                                            <div role="button" class="btn btn-default btn-lg btn-icon">
+                                                                초기화
+                                                                <i class="fa-sharp fa-light fa-arrows-rotate"></i>
+                                                            </div>
+                                                            <div role="button" class="btn btn-primary btn-lg btn-icon">
+                                                                적용하기
+                                                                <i class="fa-light fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='prompt_add.html'">
+                                                프롬프트 추가하기
+                                                <i class="far fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 데이터 펼치기 -->
+                                    <div id="table" class="table">
+                                        <table class="w100p">
+                                            <colgroup>
+                                                <col width="5%">
+                                                <col width="5%">
+                                                <col width="10%">
+                                                <col width="23%">
+                                                <col width="15%">
+                                                <col width="10%">
+                                                <col width="9%">
+                                                <col width="15%">
+                                                <col width="3%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </th>
+                                                    <th>프롬프트 이름</th>
+                                                    <th>프롬프트 내용</th>
+                                                    <th>태그</th>
+                                                    <th>공개 설정</th>
+                                                    <th>연동된 에이전트</th>
+                                                    <th> 
+                                                        <button class="btn btn-transparent pl0">
+                                                            <i class="fa-regular fa-arrow-down"></i>
+                                                        </button>
+                                                        최종 수정일
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td onclick="toggleDetails(this)">
+                                                        <button class="btn btn-transparent pl0">
+                                                            <i class="far fa-chevron-down"></i>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="prompt_detail.html">프롬프트 A</a>
+                                                    </td>
+                                                    <td>(프롬프트 A 설명) 다솜 도서관 이슬라</td>
+                                                    <td>
+                                                        <div class="tags mg0">
+                                                            <span class="tag tag-md tag-default-02">Tag1</span>
+                                                            <span class="tag tag-md tag-default-02">Tag2</span>
+                                                            <span class="tag tag-md tag-default-02">Tag3</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Public</td>
+                                                    <td>2</td>
+                                                    <td>0000-00-00 00:00</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="1" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 A
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 A 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="1" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 B
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 A 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td onclick="toggleDetails(this)">
+                                                        <button class="btn btn-transparent pl0">
+                                                            <i class="far fa-chevron-down"></i>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="prompt_detail.html">프롬프트 B</a>
+                                                    </td>
+                                                    <td>(프롬프트 B 설명) 다솜 도서관 이슬라</td>
+                                                    <td>
+                                                        <div class="tags mg0">
+                                                            <span class="tag tag-md tag-default-02">Tag1</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Public</td>
+                                                    <td>2</td>
+                                                    <td>0000-00-00 00:00</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="2" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 B
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 B 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td onclick="toggleDetails(this)">
+                                                        <button class="btn btn-transparent pl0">
+                                                            <i class="far fa-chevron-down"></i>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="prompt_detail.html">프롬프트 C</a>
+                                                    </td>
+                                                    <td>(프롬프트 C 설명) 다솜 도서관 이슬라</td>
+                                                    <td>
+                                                        <div class="tags mg0">
+                                                            <span class="tag tag-md tag-default-02">Tag1</span>
+                                                            <span class="tag tag-md tag-default-02">Tag2</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Public</td>
+                                                    <td>2</td>
+                                                    <td>0000-00-00 00:00</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="3" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="flex ai-center">
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C <i class="fa-sharp fa-solid fa-circle-check" style="margin-left: 5px; color: var(--lang-primary);"></i>
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="3" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr data-group="3" class="detail-row">
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="input-item chk-item">
+                                                            <input type="checkbox" class="input-transparent">
+                                                            <label for="" class="label-cb"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C
+                                                    </td>
+                                                    <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
+                                                    <td>
+                                                        <div class="table-btn wauto">
+                                                            <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
+                                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="list-menu hidden" id="contextMenu">
+                                                                <ul>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
+                                                                    <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="pagination">
+                                        <div class="left">
+                                            <div class="pagination-size">
+                                                <select name="" id="">
+                                                    <option value="">10개씩 보기</option>
+                                                    <option value="" selected>20개씩 보기</option>
+                                                    <option value="">30개씩 보기</option>
+                                                    <option value="">40개씩 보기</option>
+                                                </select>
+                                            </div>
+                                            <!-- <div class="pagination-count">1 - 14 of 14 items</div> -->
+                                        </div>
+                                        <div class="right">
+                                            <div class="pagination-current">
+                                                <select name="" id="">
+                                                    <option value="">1</option>
+                                                </select>
+                                                <span>of</span>
+                                                <span>1</span>
+                                                <span>pages</span>
+                                            </div>
+                                            <div class="pagination-btn-wrap">
+                                                <button class="btn btn-transparent btn-pagination">
+                                                    <i class="far fa-arrow-left"></i>
+                                                </button>
+                                                <button class="btn btn-transparent btn-pagination">
+                                                    <i class="far fa-arrow-right"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                        <!-- 데이터 펼치기 -->
-                                        <div id="table" class="table">
-                                            <table class="w100p">
-                                                <colgroup>
-                                                    <col width="5%">
-                                                    <col width="5%">
-                                                    <col width="12%">
-                                                    <col width="34%">
-                                                    <col width="15%">
-                                                    <col width="7%">
-                                                    <col width="7%">
-                                                    <col width="10%">
-                                                    <col width="5%">
-                                                </colgroup>
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
+                                    </div>
+                                </div>
+                                <div class="table-wrap view-card">
+                                    <div class="table-search">
+                                        <div class="input-item input-search borderless">
+                                            <input type="text" class="input-md">
+                                            <div class="flex ai-center">
+                                                <button class="btn btn-transparent btn-lg icon-only">
+                                                    <i class="far fa-magnifying-glass"></i>
+                                                </button>
+                                                <!-- 필터링 -->
+                                                <button class="btn btn-transparent btn-lg icon-only" onclick="toggleTable('table_filter2')">
+                                                    <i class="far fa-filter"></i>
+                                                    <div class="context-menu" id="table_filter2">
+                                                        <div class="drag-handle"></div>
+                                                        <div class="context-menu-con">
+                                                            <div>
+                                                                <p class="menu-title">항목</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <label for="">에이전트</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox" checked>
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">지식베이스</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox" checked>
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">지식데이터</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">프롬프트</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
                                                             </div>
-                                                        </th>
-                                                        <th>프롬프트 이름</th>
-                                                        <th>프롬프트 내용</th>
-                                                        <th>태그</th>
-                                                        <th>공개 설정</th>
-                                                        <th>연동된 봇</th>
-                                                        <th> 
-                                                            <button class="btn btn-transparent pl0">
-                                                                <i class="fa-regular fa-arrow-down"></i>
-                                                            </button>
-                                                            최종 수정일
-                                                        </th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td onclick="toggleDetails(this)">
-                                                            <button class="btn btn-transparent pl0">
-                                                                <i class="far fa-chevron-down"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
+                                                            <div>
+                                                                <p class="menu-title">결과</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <label for="">승인</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">반려</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="">대기</label>
+                                                                        <div class="input-item chk-item">
+                                                                            <input type="checkbox">
+                                                                            <label for="" class="label-cb"></label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
                                                             </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="prompt_detail.html">프롬프트 A</a>
-                                                        </td>
-                                                        <td>(프롬프트 A 설명) 다솜 도서관 이슬라</td>
-                                                        <td>
-                                                            <div class="tags mg0">
-                                                                <span class="tag tag-md tag-default-02">Tag1</span>
-                                                                <span class="tag tag-md tag-default-02">Tag2</span>
-                                                                <span class="tag tag-md tag-default-02">Tag3</span>
+                                                        </div>
+                                                        <div class="context-btn-wrap">
+                                                            <div role="button" class="btn btn-default btn-lg btn-icon">
+                                                                초기화
+                                                                <i class="fa-sharp fa-light fa-arrows-rotate"></i>
                                                             </div>
-                                                        </td>
-                                                        <td>Public</td>
-                                                        <td>2</td>
-                                                        <td>0000-00-00 00:00</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
+                                                            <div role="button" class="btn btn-primary btn-lg btn-icon">
+                                                                적용하기
+                                                                <i class="fa-light fa-check"></i>
                                                             </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="1" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 A
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 A 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="1" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 B
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 A 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td onclick="toggleDetails(this)">
-                                                            <button class="btn btn-transparent pl0">
-                                                                <i class="far fa-chevron-down"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="prompt_detail.html">프롬프트 B</a>
-                                                        </td>
-                                                        <td>(프롬프트 B 설명) 다솜 도서관 이슬라</td>
-                                                        <td>
-                                                            <div class="tags mg0">
-                                                                <span class="tag tag-md tag-default-02">Tag1</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>Public</td>
-                                                        <td>2</td>
-                                                        <td>0000-00-00 00:00</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="2" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 B
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 B 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td onclick="toggleDetails(this)">
-                                                            <button class="btn btn-transparent pl0">
-                                                                <i class="far fa-chevron-down"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="prompt_detail.html">프롬프트 C</a>
-                                                        </td>
-                                                        <td>(프롬프트 C 설명) 다솜 도서관 이슬라</td>
-                                                        <td>
-                                                            <div class="tags mg0">
-                                                                <span class="tag tag-md tag-default-02">Tag1</span>
-                                                                <span class="tag tag-md tag-default-02">Tag2</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>Public</td>
-                                                        <td>2</td>
-                                                        <td>0000-00-00 00:00</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit2.html'">설정 수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">버전 추가하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal1')">일괄 삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="3" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td class="flex ai-center">
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C <i class="fa-sharp fa-solid fa-circle-check" style="margin-left: 5px; color: var(--lang-primary);"></i>
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="3" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-group="3" class="detail-row">
-                                                        <td></td>
-                                                        <td>
-                                                            <div class="input-item chk-item">
-                                                                <input type="checkbox" class="input-transparent">
-                                                                <label for="" class="label-cb"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="tag tag-md tag-default-02">V2</span> 프롬프트 C
-                                                        </td>
-                                                        <td colspan="5">(프롬프트 C 설명) 다솜 도서관 아슬라 산들림 미쁘다 우리는 로운 사과 노트북 예그리나 도르레 포도 달볓 바나나 다솜 이플 포도 로운</td>
-                                                        <td>
-                                                            <div class="table-btn wauto">
-                                                                <button class="btn btn-transparent" onclick="toggleMenu(event, this)">
-                                                                    <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                                </button>
-                                                                <div class="list-menu hidden" id="contextMenu">
-                                                                    <ul>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_detail.html'">상세보기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal3')">현행선택</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="location.href='prompt_edit.html'">수정하기</button></li>
-                                                                        <li><button class="btn btn-transparent" onclick="openModal('modal2')">삭제하기</button></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <button class="btn btn-primary btn-lg btn-icon" onclick="location.href='prompt_add.html'">
+                                                프롬프트 추가하기
+                                                <i class="far fa-plus"></i>
+                                            </button>
                                         </div>
-                                        <div class="pagination">
-                                            <div class="left">
-                                                <div class="pagination-size">
-                                                    <select name="" id="">
-                                                        <option value="">10개씩 보기</option>
-                                                        <option value="" selected>20개씩 보기</option>
-                                                        <option value="">30개씩 보기</option>
-                                                        <option value="">40개씩 보기</option>
-                                                    </select>
-                                                </div>
-                                                <!-- <div class="pagination-count">1 - 14 of 14 items</div> -->
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-select">
+                                            <div class="chk-item input-item">
+                                                <input type="checkbox" id="card_check">
+                                                <label for="card_check" class="label-cb"></label>
+                                                <label for="card_check"><span>1</span> 선택</label>
                                             </div>
-                                            <div class="right">
-                                                <div class="pagination-current">
-                                                    <select name="" id="">
-                                                        <option value="">1</option>
-                                                    </select>
-                                                    <span>of</span>
-                                                    <span>1</span>
-                                                    <span>pages</span>
-                                                </div>
-                                                <div class="pagination-btn-wrap">
-                                                    <button class="btn btn-transparent btn-pagination">
-                                                        <i class="far fa-arrow-left"></i>
-                                                    </button>
-                                                    <button class="btn btn-transparent btn-pagination">
-                                                        <i class="far fa-arrow-right"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <div class="card-list">
+                                            <ul>
+                                                <li>
+                                                    <div>
+                                                        <div class="card-title">
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" checked id="card_1">
+                                                                <label for="card_1" class="label-cb"></label>
+                                                                <label for="card_1"><span class="tag tag-md tag-default-02">V2</span>프롬프트 A</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-date">0000-00-00 00:00</div>
+                                                        <div class="card-con">
+                                                            (프롬프트 설명) 아련 컴퓨터 다솜 미리내 사과 미쁘다 산들림 소록소록 로운 포도 아슬라 아름드리 여우별 산들림 예그리나 비나리 이플 미리내 아련 여우...
+                                                        </div>
+                                                        <div class="card-setting">
+                                                            <span class="public">Public</span>
+                                                            <span class="bot">연동된 에이전트/채팅룸 <span>2</span></span>
+                                                        </div>
+                                                        <div class="tags">
+                                                            <span class="tag-md tag tag-default-02">Tag1</span>
+                                                            <span class="tag-md tag tag-default-02">Tag2</span>
+                                                            <span class="tag-md tag tag-default-02">Tag3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <span class="tag"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <div class="card-title">
+                                                            <div class="input-item chk-item">
+                                                                <input type="checkbox" id="card_2">
+                                                                <label for="card_2" class="label-cb"></label>
+                                                                <label for="card_2"><span class="tag tag-md tag-default-02">V1</span>프롬프트 B</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-date">0000-00-00 00:00</div>
+                                                        <div class="card-con">
+                                                            (프롬프트 설명) 아련 컴퓨터 다솜 미리내 사과 미쁘다 산들림 소록소록 로운 포도 아슬라 아름드리 여우별 산들림 예그리나 비나리 이플 미리내 아련 여우...
+                                                        </div>
+                                                        <div class="card-setting">
+                                                            <span class="public">Private</span>
+                                                            <span class="bot">연동된 에이전트/채팅룸 <span>1</span></span>
+                                                        </div>
+                                                        <div class="tags">
+                                                            <span class="tag-md tag tag-default-02">Tag1</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

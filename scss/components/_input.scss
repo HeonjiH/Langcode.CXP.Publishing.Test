@@ -35,6 +35,23 @@ input::placeholder, input:read-only, input:disabled, textarea::placeholder, text
 
         }
     }
+
+    &.input-item-count {
+        display: flex;
+        align-items: center;
+        background-color: var(--lang-ui-03);
+        
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 1rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #525252;
+            height: 2.5rem;
+            
+        }
+    }
 }
 
 .input-sm {
@@ -332,7 +349,6 @@ textarea {
 .progress-bar {
     display: flex;
     gap: 0;
-    margin-bottom: 2.5rem;
 
     &.line-progress {
         .progress-item {
@@ -373,7 +389,6 @@ textarea {
         &.complete {
             i {
                 color: var(--lang-primary);
-                font-size: 1rem;;
             }
 
             .bar {
@@ -406,6 +421,7 @@ textarea {
 }
 
 @include mobile {
+    /************************* text input *************************/
     .input-item {
         &.input-file {
             .file-uploader {
@@ -416,24 +432,28 @@ textarea {
     }
 
     /************************* progressbar *************************/
-.progress-bar {
-    margin-bottom: 2rem;
-    
-    .progress-item {
-        gap: 0.5rem;
+    .progress-bar {
+        
+        .progress-item {
+            gap: 0.5rem;
 
-        &.complete {
             i {
                 font-size: 0.75rem;;
             }
-        }
 
-        .progress-status {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
+            .progress-status {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                
+                span {
+                    font-size: 12px;
+                    word-break: keep-all;
+                    text-align: center;
+                    line-height: 135%;
+                }
+            }
         }
     }
-}
 }
